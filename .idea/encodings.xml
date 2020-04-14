@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="GBK">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/authority" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/authority/authority-client" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/authority/authority-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/littleapp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/littleapp/littleapp-client" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/littleapp/littleapp-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/main" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resource" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resource/resource-client" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resource/resource-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/user" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/user/user-client" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/user/user-server" charset="UTF-8" />
+    <file url="PROJECT" charset="GBK" />
+  </component>
+</project>
