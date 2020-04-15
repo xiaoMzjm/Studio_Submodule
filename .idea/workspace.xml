@@ -2,87 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3356d297-c595-4058-a3f9-618c83edde28" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/authority/authority-client/target/classes/com/base/authority/client/common/Enums$AuthorityTypeEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/authority/authority-client/target/classes/com/base/authority/client/common/Enums$AuthorityTypeEnum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authority/authority-client/target/classes/com/base/authority/client/model/AuthorityVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/authority/authority-client/target/classes/com/base/authority/client/model/AuthorityVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authority/authority-client/target/classes/com/base/authority/client/service/AuthorityService.class" beforeDir="false" afterPath="$PROJECT_DIR$/authority/authority-client/target/classes/com/base/authority/client/service/AuthorityService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authority/authority-server/target/classes/com/base/authority/server/manager/AuthorityManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/authority/authority-server/target/classes/com/base/authority/server/manager/AuthorityManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authority/authority-server/target/classes/com/base/authority/server/model/AuthorityConvertor.class" beforeDir="false" afterPath="$PROJECT_DIR$/authority/authority-server/target/classes/com/base/authority/server/model/AuthorityConvertor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authority/authority-server/target/classes/com/base/authority/server/model/AuthorityDO.class" beforeDir="false" afterPath="$PROJECT_DIR$/authority/authority-server/target/classes/com/base/authority/server/model/AuthorityDO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authority/authority-server/target/classes/com/base/authority/server/model/AuthorityDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/authority/authority-server/target/classes/com/base/authority/server/model/AuthorityDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authority/authority-server/target/classes/com/base/authority/server/service/AuthorityServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/authority/authority-server/target/classes/com/base/authority/server/service/AuthorityServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/classes/com/base/common/constant/Result.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/classes/com/base/common/constant/Result.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/classes/com/base/common/exception/BaseException.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/classes/com/base/common/exception/BaseException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/classes/com/base/common/exception/ExceptionEnums.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/classes/com/base/common/exception/ExceptionEnums.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/classes/com/base/common/util/DateUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/classes/com/base/common/util/DateUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/classes/com/base/common/util/LogUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/classes/com/base/common/util/LogUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/classes/com/base/common/util/MD5Util.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/classes/com/base/common/util/MD5Util.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/classes/com/base/common/util/UUIDUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/classes/com/base/common/util/UUIDUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/classes/com/base/common/util/VerifyUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/classes/com/base/common/util/VerifyUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/common-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/common-0.0.1-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/target/classes/com/base/example/api/BaseResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/example/target/classes/com/base/example/api/BaseResource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/target/classes/com/base/example/api/example/example_jpa/JpaResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/example/target/classes/com/base/example/api/example/example_jpa/JpaResource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/target/classes/com/base/example/api/example/example_jpa/UserDO.class" beforeDir="false" afterPath="$PROJECT_DIR$/example/target/classes/com/base/example/api/example/example_jpa/UserDO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/target/classes/com/base/example/api/example/example_redis/LockUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/example/target/classes/com/base/example/api/example/example_redis/LockUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/target/classes/com/base/example/api/example/example_redis/RedisResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/example/target/classes/com/base/example/api/example/example_redis/RedisResource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/target/classes/com/base/example/api/example/example_springcache/CacheDO.class" beforeDir="false" afterPath="$PROJECT_DIR$/example/target/classes/com/base/example/api/example/example_springcache/CacheDO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/target/classes/com/base/example/api/example/example_springcache/CacheResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/example/target/classes/com/base/example/api/example/example_springcache/CacheResource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/target/classes/com/base/example/api/example/example_springcache/CacheService.class" beforeDir="false" afterPath="$PROJECT_DIR$/example/target/classes/com/base/example/api/example/example_springcache/CacheService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/target/example-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/example/target/example-0.0.1-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/example/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/littleapp/littleapp-client/target/classes/com/base/littleapp/client/model/WxUserInfoVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/littleapp/littleapp-client/target/classes/com/base/littleapp/client/model/WxUserInfoVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/littleapp/littleapp-client/target/classes/com/base/littleapp/client/service/WxService.class" beforeDir="false" afterPath="$PROJECT_DIR$/littleapp/littleapp-client/target/classes/com/base/littleapp/client/service/WxService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/littleapp/littleapp-server/target/classes/com/base/littleapp/server/api/WxLoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/littleapp/littleapp-server/target/classes/com/base/littleapp/server/api/WxLoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/littleapp/littleapp-server/target/classes/com/base/littleapp/server/common/Constant$ErrorCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/littleapp/littleapp-server/target/classes/com/base/littleapp/server/common/Constant$ErrorCode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/littleapp/littleapp-server/target/classes/com/base/littleapp/server/manager/WxLoginManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/littleapp/littleapp-server/target/classes/com/base/littleapp/server/manager/WxLoginManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/littleapp/littleapp-server/target/classes/com/base/littleapp/server/model/WxRequireLoginResultDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/littleapp/littleapp-server/target/classes/com/base/littleapp/server/model/WxRequireLoginResultDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/littleapp/littleapp-server/target/classes/com/base/littleapp/server/model/WxUserConvertor.class" beforeDir="false" afterPath="$PROJECT_DIR$/littleapp/littleapp-server/target/classes/com/base/littleapp/server/model/WxUserConvertor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/littleapp/littleapp-server/target/classes/com/base/littleapp/server/service/WxLoginServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/littleapp/littleapp-server/target/classes/com/base/littleapp/server/service/WxLoginServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/littleapp/littleapp-server/target/classes/com/base/littleapp/server/wrapper/WxWapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/littleapp/littleapp-server/target/classes/com/base/littleapp/server/wrapper/WxWapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/littleapp/littleapp-server/target/littleapp-0.0.1-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/littleapp/littleapp-server/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/littleapp/littleapp-server/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/littleapp/littleapp-server/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/littleapp/littleapp-server/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/littleapp/littleapp-server/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/littleapp/littleapp-server/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/submain/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/src/main/java/com/base/sub/main/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/submain/src/main/java/com/base/sub/main/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/src/main/java/com/base/sub/main/config/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/submain/src/main/java/com/base/sub/main/config/SwaggerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/src/main/java/com/base/sub/main/filter/WebAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/submain/src/main/java/com/base/sub/main/filter/WebAspect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/src/main/resources/application-local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/submain/src/main/resources/application-local.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/src/main/resources/application-online.properties" beforeDir="false" afterPath="$PROJECT_DIR$/submain/src/main/resources/application-online.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/submain/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/src/main/resources/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/submain/src/main/resources/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/src/main/resources/keephealthy.top.jks" beforeDir="false" afterPath="$PROJECT_DIR$/submain/src/main/resources/keephealthy.top.jks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/src/main/resources/keystore.p12" beforeDir="false" afterPath="$PROJECT_DIR$/submain/src/main/resources/keystore.p12" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/src/main/resources/static/file/导入模板.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/submain/src/main/resources/static/file/导入模板.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/src/main/resources/static/images/波浪.png" beforeDir="false" afterPath="$PROJECT_DIR$/submain/src/main/resources/static/images/波浪.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/src/main/resources/templates/companylist.html" beforeDir="false" afterPath="$PROJECT_DIR$/submain/src/main/resources/templates/companylist.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/target/classes/application-local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/submain/target/classes/application-local.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/target/classes/application-online.properties" beforeDir="false" afterPath="$PROJECT_DIR$/submain/target/classes/application-online.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/submain/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/target/classes/com/base/main/Application.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/target/classes/com/base/main/config/SwaggerConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/target/classes/com/base/main/filter/WebAspect.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/target/classes/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/submain/target/classes/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/target/classes/keephealthy.top.jks" beforeDir="false" afterPath="$PROJECT_DIR$/submain/target/classes/keephealthy.top.jks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/target/classes/keystore.p12" beforeDir="false" afterPath="$PROJECT_DIR$/submain/target/classes/keystore.p12" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/target/classes/static/file/导入模板.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/submain/target/classes/static/file/导入模板.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/target/classes/static/images/1e596734e5fc47aca3ba23cf0d499978.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/target/classes/static/images/波浪.png" beforeDir="false" afterPath="$PROJECT_DIR$/submain/target/classes/static/images/波浪.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/target/classes/templates/companylist.html" beforeDir="false" afterPath="$PROJECT_DIR$/submain/target/classes/templates/companylist.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource/resource-client/target/classes/com/base/resource/client/model/ResourceVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/resource/resource-client/target/classes/com/base/resource/client/model/ResourceVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource/resource-client/target/classes/com/base/resource/client/model/SingleUpdateVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/resource/resource-client/target/classes/com/base/resource/client/model/SingleUpdateVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource/resource-client/target/classes/com/base/resource/client/service/ResourceService.class" beforeDir="false" afterPath="$PROJECT_DIR$/resource/resource-client/target/classes/com/base/resource/client/service/ResourceService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource/resource-server/target/classes/com/base/resource/server/api/ResourceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/resource/resource-server/target/classes/com/base/resource/server/api/ResourceController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource/resource-server/target/classes/com/base/resource/server/dao/ResourceDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/resource/resource-server/target/classes/com/base/resource/server/dao/ResourceDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource/resource-server/target/classes/com/base/resource/server/manager/ResourceManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/resource/resource-server/target/classes/com/base/resource/server/manager/ResourceManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource/resource-server/target/classes/com/base/resource/server/model/ResourceConvertor.class" beforeDir="false" afterPath="$PROJECT_DIR$/resource/resource-server/target/classes/com/base/resource/server/model/ResourceConvertor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource/resource-server/target/classes/com/base/resource/server/model/ResourceDO.class" beforeDir="false" afterPath="$PROJECT_DIR$/resource/resource-server/target/classes/com/base/resource/server/model/ResourceDO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource/resource-server/target/classes/com/base/resource/server/model/ResourceDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/resource/resource-server/target/classes/com/base/resource/server/model/ResourceDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource/resource-server/target/classes/com/base/resource/server/service/ResourceServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/resource/resource-server/target/classes/com/base/resource/server/service/ResourceServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/user-client/target/classes/com/base/user/client/model/UserVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/user/user-client/target/classes/com/base/user/client/model/UserVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/user-client/target/classes/com/base/user/client/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/user/user-client/target/classes/com/base/user/client/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/target/classes/application-local.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/target/classes/application-online.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/target/classes/css/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/target/classes/keephealthy.top.jks" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/target/classes/keystore.p12" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/target/classes/static/file/导入模板.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/target/classes/static/images/波浪.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/target/classes/templates/companylist.html" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -141,11 +69,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="456">
-              <caret line="24" column="10" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
+              <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -168,11 +96,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="27" column="17" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
+            <state relative-caret-position="384">
+              <caret line="61" column="10" selection-start-line="61" selection-start-column="10" selection-end-line="61" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -327,11 +255,6 @@
               <item name="submodule" type="b2602c69:ProjectViewProjectNode" />
               <item name="Studio_Submodule" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="submodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Studio_Submodule" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -478,7 +401,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586963363788</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="修改main模块名称">
+      <created>1586963775864</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1586963775864</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -494,10 +424,10 @@
       <window_info anchor="right" id="Maven Projects" visible="true" weight="0.23353752" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32969433" />
-      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.32969433" />
+      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.32969433" />
       <window_info id="Capture Tool" />
       <window_info id="Designer" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2588055" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2588055" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -520,7 +450,8 @@
     <MESSAGE value="update" />
     <MESSAGE value="submain" />
     <MESSAGE value="去除重复依赖" />
-    <option name="LAST_COMMIT_MESSAGE" value="去除重复依赖" />
+    <MESSAGE value="修改main模块名称" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改main模块名称" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/example/pom.xml">
@@ -645,13 +576,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="24" column="10" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
@@ -692,8 +616,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="27" column="17" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
+        <state relative-caret-position="384">
+          <caret line="61" column="10" selection-start-line="61" selection-start-column="10" selection-end-line="61" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
         </state>
       </provider>
     </entry>

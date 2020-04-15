@@ -25,100 +25,11 @@
     </properties>
 
     <modules>
-        <module>submain</module>
-        <module>common</module>
-        <module>example</module>
-        <module>user</module>
-        <module>littleapp</module>
-        <module>authority</module>
-        <module>resource</module>
 
     </modules>
 
     <dependencyManagement>
         <dependencies>
-            <!-- ================================================= -->
-            <!-- 子模块                                               -->
-            <!-- ================================================= -->
-            <dependency>
-                <groupId>com.base</groupId>
-                <artifactId>common</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>com.base</groupId>
-                <artifactId>example</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>com.base</groupId>
-                <artifactId>sbumain</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
-            </dependency>
-            <!-- 用户 -->
-            <dependency>
-                <groupId>com.base</groupId>
-                <artifactId>user</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>com.base</groupId>
-                <artifactId>user-server</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>com.base</groupId>
-                <artifactId>user-client</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
-            </dependency>
-            <!-- 资源 -->
-            <dependency>
-                <groupId>com.base</groupId>
-                <artifactId>resource</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>com.base</groupId>
-                <artifactId>resource-client</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>com.base</groupId>
-                <artifactId>resource-server</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
-            </dependency>
-            <!-- 小程序 -->
-            <dependency>
-                <groupId>com.base</groupId>
-                <artifactId>littleapp</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>com.base</groupId>
-                <artifactId>littleapp-server</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>com.base</groupId>
-                <artifactId>littleapp-client</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
-            </dependency>
-            <!-- 权限管理 -->
-            <dependency>
-                <groupId>com.base</groupId>
-                <artifactId>authority</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>com.base</groupId>
-                <artifactId>authority-server</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>com.base</groupId>
-                <artifactId>authority-client</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
-            </dependency>
 
             <!-- ================================================= -->
             <!-- 工具类                                             -->
