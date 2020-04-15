@@ -4,9 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.base.submodule</groupId>
+    <groupId>com.base</groupId>
     <artifactId>submodule</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <parent>
@@ -27,17 +27,89 @@
     <modules>
         <module>authority</module>
         <module>common</module>
-        <module>example</module>
         <module>littleapp</module>
-        <module>main</module>
         <module>resource</module>
+        <module>submain</module>
         <module>user</module>
-
     </modules>
 
     <dependencyManagement>
         <dependencies>
 
+            <!-- lib-公共 -->
+            <dependency>
+                <groupId>com.base</groupId>
+                <artifactId>common</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+
+            <!-- lib-权限 -->
+            <dependency>
+                <groupId>com.base</groupId>
+                <artifactId>authority</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.base</groupId>
+                <artifactId>authority-client</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.base</groupId>
+                <artifactId>authority-server</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+
+            <!-- lib-resource-->
+            <dependency>
+                <groupId>com.base</groupId>
+                <artifactId>resource</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.base</groupId>
+                <artifactId>resource-client</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.base</groupId>
+                <artifactId>resource-server</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+
+            <!-- lib-user -->
+            <dependency>
+                <groupId>com.base</groupId>
+                <artifactId>user</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.base</groupId>
+                <artifactId>user-client</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.base</groupId>
+                <artifactId>user-server</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+
+            <!-- lib-littleapp -->
+            <dependency>
+                <groupId>com.base</groupId>
+                <artifactId>littleapp</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.base</groupId>
+                <artifactId>littleapp-client</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.base</groupId>
+                <artifactId>littleapp-server</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
 
             <!-- ================================================= -->
             <!-- 工具类                                             -->
@@ -126,4 +198,6 @@
 
         </dependencies>
     </dependencyManagement>
+
+
 </project>
