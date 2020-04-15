@@ -35,7 +35,7 @@ public class TokenInterceptor extends HandlerInterceptorAdapter implements Handl
     @Value("${local:true}")
     private Boolean enableTokenFilter;
 
-    @Value("${local:7}")
+    @Value("${tokenExpireDay:7}")
     private Integer tokenExpireDay;
 
     @Autowired
