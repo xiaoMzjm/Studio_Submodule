@@ -25,11 +25,19 @@
     </properties>
 
     <modules>
+        <module>authority</module>
+        <module>common</module>
+        <module>example</module>
+        <module>littleapp</module>
+        <module>main</module>
+        <module>resource</module>
+        <module>user</module>
 
     </modules>
 
     <dependencyManagement>
         <dependencies>
+
 
             <!-- ================================================= -->
             <!-- 工具类                                             -->
