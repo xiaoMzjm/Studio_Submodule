@@ -30,20 +30,12 @@
         <module>example</module>
 
         <module>user</module>
-        <module>user/user-server</module>
-        <module>user/user-client</module>
 
         <module>littleapp</module>
-        <module>littleapp/littleapp-server</module>
-        <module>littleapp/littleapp-client</module>
 
         <module>authority</module>
-        <module>authority/authority-server</module>
-        <module>authority/authority-client</module>
 
         <module>resource</module>
-        <module>resource/resource-client</module>
-        <module>resource/resource-server</module>
 
     </modules>
 
