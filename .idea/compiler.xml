@@ -12,13 +12,15 @@
         <module name="example" />
         <module name="littleapp-client" />
         <module name="littleapp-server" />
-        <module name="main" />
         <module name="resource-client" />
         <module name="resource-server" />
+        <module name="sbumain" />
         <module name="user-client" />
         <module name="user-server" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="1.8" />
+    <bytecodeTargetLevel target="1.8">
+      <module name="main" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
