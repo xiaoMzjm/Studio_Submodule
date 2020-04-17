@@ -1,8 +1,6 @@
-package com.base.resource.server.model;
+package com.base.resource.client.model;
 
 import java.util.Date;
-
-import javax.persistence.Column;
 
 /**
  * @author:小M

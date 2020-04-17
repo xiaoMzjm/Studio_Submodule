@@ -8,7 +8,7 @@ import com.base.resource.client.model.ResourceVO;
 import com.base.resource.client.service.ResourceService;
 import com.base.resource.server.manager.ResourceManager;
 import com.base.resource.server.model.ResourceConvertor;
-import com.base.resource.server.model.ResourceDTO;
+import com.base.resource.client.model.ResourceDTO;
 import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,11 +38,9 @@ public class ResourceServiceImpl implements ResourceService {
         return map;
     }
 
-    public ResourceManager getResourceManager() {
-        return resourceManager;
+    @Override
+    public ResourceDTO add(String path, String name, String ext, String oriName) {
+        return resourceManager.add(path,name,ext,oriName);
     }
 
-    public void setResourceManager(ResourceManager resourceManager) {
-        this.resourceManager = resourceManager;
-    }
 }

@@ -6,10 +6,8 @@ import java.util.List;
 import com.base.resource.server.dao.ResourceDao;
 import com.base.resource.server.model.ResourceConvertor;
 import com.base.resource.server.model.ResourceDO;
-import com.base.resource.server.model.ResourceDTO;
-import com.sun.org.apache.regexp.internal.RE;
+import com.base.resource.client.model.ResourceDTO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Component;
 
 /**

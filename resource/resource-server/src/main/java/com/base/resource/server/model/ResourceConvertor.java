@@ -2,7 +2,7 @@ package com.base.resource.server.model;
 
 import java.util.List;
 
-import com.base.resource.client.common.Constant;
+import com.base.resource.client.model.ResourceDTO;
 import com.base.resource.client.model.ResourceVO;
 import com.google.common.collect.Lists;
 import org.apache.commons.collections.CollectionUtils;

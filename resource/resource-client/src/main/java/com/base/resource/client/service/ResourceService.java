@@ -1,6 +1,8 @@
 package com.base.resource.client.service;
 
 import java.util.*;
+
+import com.base.resource.client.model.ResourceDTO;
 import com.base.resource.client.model.ResourceVO;
 
 /**
@@ -10,4 +12,6 @@ import com.base.resource.client.model.ResourceVO;
 public interface ResourceService {
 
     Map<String,ResourceVO> findByNameList(List<String> nameList);
+
+    ResourceDTO add(String path, String name, String ext, String oriName);
 }
