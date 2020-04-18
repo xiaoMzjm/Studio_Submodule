@@ -36,7 +36,7 @@ public class ResourceConvertor {
         resourceVO.setPath(resourceDTO.getPath());
         resourceVO.setName(resourceDTO.getName());
         resourceVO.setExt(resourceDTO.getExt());
-        resourceVO.setUrl("/images/" + resourceDTO.getName() + "." + resourceDTO.getExt());
+        resourceVO.setUrl("/static/images/" + resourceDTO.getName() + "." + resourceDTO.getExt());
         return resourceVO;
     }
 }
