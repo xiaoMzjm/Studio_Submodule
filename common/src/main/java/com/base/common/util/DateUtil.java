@@ -231,6 +231,23 @@ public class DateUtil {
     }
 
     /**
+     * 获取指定年、月的第一天
+     * @param year
+     * @param year
+     * @return
+     */
+    public static Date getFirstDayOfYear(Integer year) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.YEAR, year);
+        calendar.set(Calendar.MONTH, 1);
+        calendar.set(Calendar.DAY_OF_MONTH, 1);
+        calendar.set(Calendar.HOUR_OF_DAY, 0);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+        return calendar.getTime();
+    }
+
+    /**
      * 取得某天所在周的最后一天
      * @param date
      * @return
