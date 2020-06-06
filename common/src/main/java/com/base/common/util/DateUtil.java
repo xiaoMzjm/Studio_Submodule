@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.TimeZone;
 
 /**
  * @author:小M
@@ -78,7 +79,7 @@ public class DateUtil {
      * @return
      */
     public static int getDaysOfMonth(int year, int month) {
-        Calendar calendar = Calendar.getInstance();
+        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("GMT+8"));
         calendar.set(year, month - 1, 1);
         return calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
     }
@@ -89,7 +90,7 @@ public class DateUtil {
      * @return
      */
     public static int getYear(Date date) {
-        Calendar calendar = Calendar.getInstance();
+        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("GMT+8"));
         calendar.setTime(date);
         return calendar.get(Calendar.YEAR);
     }
@@ -100,7 +101,7 @@ public class DateUtil {
      * @return
      */
     public static int getMonth(Date date) {
-        Calendar calendar = Calendar.getInstance();
+        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("GMT+8"));
         calendar.setTime(date);
         return calendar.get(Calendar.MONTH) + 1;
     }
@@ -111,7 +112,7 @@ public class DateUtil {
      * @return
      */
     public static int getDay(Date date) {
-        Calendar calendar = Calendar.getInstance();
+        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("GMT+8"));
         calendar.setTime(date);
         return calendar.get(Calendar.DATE);
     }
@@ -122,7 +123,7 @@ public class DateUtil {
      * @return
      */
     public static int getHour(Date date) {
-        Calendar calendar = Calendar.getInstance();
+        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("GMT+8"));
         calendar.setTime(date);
         return calendar.get(Calendar.HOUR);
     }
@@ -133,7 +134,7 @@ public class DateUtil {
      * @return
      */
     public static int getMinute(Date date) {
-        Calendar calendar = Calendar.getInstance();
+        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("GMT+8"));
         calendar.setTime(date);
         return calendar.get(Calendar.MINUTE);
     }
@@ -144,7 +145,7 @@ public class DateUtil {
      * @return
      */
     public static int getSecond(Date date) {
-        Calendar calendar = Calendar.getInstance();
+        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("GMT+8"));
         calendar.setTime(date);
         return calendar.get(Calendar.SECOND);
     }
@@ -155,7 +156,7 @@ public class DateUtil {
      * @return
      */
     public static int getWeekDay(Date date) {
-        Calendar calendar = Calendar.getInstance();
+        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("GMT+8"));
         calendar.setTime(date);
         int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
         return dayOfWeek-1;
@@ -204,7 +205,7 @@ public class DateUtil {
      * @return
      */
     public static Date getFirstDayOfMonth(Date date) {
-        Calendar calendar = Calendar.getInstance();
+        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("GMT+8"));
         calendar.setTime(new Date());
         calendar.set(Calendar.DAY_OF_MONTH, 1);
         calendar.set(Calendar.HOUR_OF_DAY, 0);
@@ -220,7 +221,7 @@ public class DateUtil {
      * @return
      */
     public static Date getFirstDayOfMonth(Integer year, Integer month) {
-        Calendar calendar = Calendar.getInstance();
+        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("GMT+8"));
         calendar.set(Calendar.YEAR, year);
         calendar.set(Calendar.MONTH, month - 1);
         calendar.set(Calendar.DAY_OF_MONTH, 1);
@@ -237,7 +238,7 @@ public class DateUtil {
      * @return
      */
     public static Date getFirstDayOfYear(Integer year) {
-        Calendar calendar = Calendar.getInstance();
+        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("GMT+8"));
         calendar.set(Calendar.YEAR, year);
         calendar.set(Calendar.MONTH, 0);
         calendar.set(Calendar.DAY_OF_MONTH, 0);
@@ -267,11 +268,11 @@ public class DateUtil {
      * @return
      */
     public static Date getFirstDayOfWeek(int year, int week) {
-        Calendar calFirst = Calendar.getInstance();
+        Calendar calFirst = Calendar.getInstance(TimeZone.getTimeZone("GMT+8"));
         calFirst.set(year, 0, 7);
         Date firstDate = getFirstDayOfWeek(calFirst.getTime());
 
-        Calendar firstDateCal = Calendar.getInstance();
+        Calendar firstDateCal = Calendar.getInstance(TimeZone.getTimeZone("GMT+8"));
         firstDateCal.setTime(firstDate);
 
         Calendar c = new GregorianCalendar();
@@ -294,11 +295,11 @@ public class DateUtil {
      * @return
      */
     public static Date getLastDayOfWeek(int year, int week) {
-        Calendar calLast = Calendar.getInstance();
+        Calendar calLast = Calendar.getInstance(TimeZone.getTimeZone("GMT+8"));
         calLast.set(year, 0, 7);
         Date firstDate = getLastDayOfWeek(calLast.getTime());
 
-        Calendar firstDateCal = Calendar.getInstance();
+        Calendar firstDateCal = Calendar.getInstance(TimeZone.getTimeZone("GMT+8"));
         firstDateCal.setTime(firstDate);
 
         Calendar c = new GregorianCalendar();
@@ -318,7 +319,7 @@ public class DateUtil {
         if (date == null) {
             throw new IllegalArgumentException("The date must not be null");
         } else {
-            Calendar c = Calendar.getInstance();
+            Calendar c = Calendar.getInstance(TimeZone.getTimeZone("GMT+8"));
             c.setTime(date);
             c.add(calendarField, amount);
             return c.getTime();
@@ -471,8 +472,8 @@ public class DateUtil {
     public static int diffMonth(Date before, Date after){
         int monthAll=0;
         int yearsX = diffYear(before,after);
-        Calendar c1 = Calendar.getInstance();
-        Calendar c2 = Calendar.getInstance();
+        Calendar c1 = Calendar.getInstance(TimeZone.getTimeZone("GMT+8"));
+        Calendar c2 = Calendar.getInstance(TimeZone.getTimeZone("GMT+8"));
         c1.setTime(before);
         c2.setTime(after);
         int monthsX = c2.get(Calendar.MONTH) - c1.get(Calendar.MONTH);
@@ -500,7 +501,7 @@ public class DateUtil {
      * @return
      */
     public static Date setEndDay(Date date) {
-        Calendar calendar = Calendar.getInstance();
+        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("GMT+8"));
         calendar.setTime(date);
         calendar.set(Calendar.HOUR_OF_DAY, 23);
         calendar.set(Calendar.MINUTE, 59);
@@ -514,7 +515,7 @@ public class DateUtil {
      * @return
      */
     public static Date setStartDay(Date date) {
-        Calendar calendar = Calendar.getInstance();
+        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("GMT+8"));
         calendar.setTime(date);
         calendar.set(Calendar.HOUR_OF_DAY, 00);
         calendar.set(Calendar.MINUTE, 00);
