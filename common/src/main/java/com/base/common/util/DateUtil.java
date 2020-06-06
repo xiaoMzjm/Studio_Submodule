@@ -20,6 +20,7 @@ public class DateUtil {
      */
     public static Date convert2Date(String dateStr, String format) {
         SimpleDateFormat simple = new SimpleDateFormat(format);
+        simple.setTimeZone(TimeZone.getTimeZone("GMT+8"));
         try {
             simple.setLenient(false);
             return simple.parse(dateStr);
@@ -35,6 +36,7 @@ public class DateUtil {
      */
     public static Date convert2Date(String dateStr) {
         SimpleDateFormat simple = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        simple.setTimeZone(TimeZone.getTimeZone("GMT+8"));
         try {
             simple.setLenient(false);
             return simple.parse(dateStr);
@@ -55,6 +57,7 @@ public class DateUtil {
             return null;
         }
         SimpleDateFormat formater = new SimpleDateFormat(format);
+        formater.setTimeZone(TimeZone.getTimeZone("GMT+8"));
         try {
             return formater.format(date);
         } catch (Exception e) {
