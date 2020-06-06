@@ -223,6 +223,7 @@ public class DateUtil {
         calendar.set(Calendar.HOUR_OF_DAY, 0);
         calendar.set(Calendar.MINUTE, 0);
         calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.MILLISECOND, 0);
         return calendar.getTime();
     }
 
@@ -241,6 +242,7 @@ public class DateUtil {
         calendar.set(Calendar.HOUR_OF_DAY, 0);
         calendar.set(Calendar.MINUTE, 0);
         calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.MILLISECOND, 0);
         return calendar.getTime();
     }
 
@@ -259,6 +261,7 @@ public class DateUtil {
         calendar.set(Calendar.HOUR_OF_DAY, 0);
         calendar.set(Calendar.MINUTE, 0);
         calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.MILLISECOND, 0);
         return calendar.getTime();
     }
 
@@ -515,20 +518,6 @@ public class DateUtil {
         return getYear(after) - getYear(before);
     }
 
-    /**
-     * 设置23:59:59
-     * @param date
-     * @return
-     */
-    public static Date setEndDay(Date date) {
-        TimeZone.setDefault(TimeZone.getTimeZone("GMT+8"));
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(date);
-        calendar.set(Calendar.HOUR_OF_DAY, 23);
-        calendar.set(Calendar.MINUTE, 59);
-        calendar.set(Calendar.SECOND, 59);
-        return calendar.getTime();
-    }
 
     /**
      * 设置00:00:00
@@ -542,6 +531,7 @@ public class DateUtil {
         calendar.set(Calendar.HOUR_OF_DAY, 00);
         calendar.set(Calendar.MINUTE, 00);
         calendar.set(Calendar.SECOND, 00);
+        calendar.set(Calendar.MILLISECOND, 0);
         return calendar.getTime();
     }
 }
