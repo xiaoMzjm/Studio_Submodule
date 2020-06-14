@@ -26,7 +26,8 @@ public class ExcelUtil {
     public static class CellDTO{
         public String text;
         public Integer color;
-
+        public Boolean isDate;
+        public String dateFormat;
         public CellDTO(String text, Integer color) {
             this.text = text;
             this.color = color;
@@ -74,6 +75,10 @@ public class ExcelUtil {
                     Font font  = wb.createFont();
                     font.setColor(cell.color.shortValue());
                     style.setFont(font);
+                }
+                if(cell.isDate) {
+                    short df = wb.createDataFormat().getFormat(cell.dateFormat);
+                    style.setDataFormat(df);
                 }
                 c.setCellStyle(style);
 
