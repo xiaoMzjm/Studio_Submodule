@@ -26,7 +26,7 @@ public class ExcelUtil {
     public static class CellDTO{
         public String text;
         public Integer color;
-        public Boolean isDate;
+        public boolean isDate;
         public String dateFormat;
         public CellDTO(String text, Integer color) {
             this.text = text;
