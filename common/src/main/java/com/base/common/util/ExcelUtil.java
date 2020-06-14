@@ -36,7 +36,17 @@ public class ExcelUtil {
         }
     }
 
-    public static String insertExcelAndSave(InputStream inputStream, Integer beginRowNum, String savePath, List<List<CellDTO>> rules) throws Exception{
+    /**
+     *
+     * @param inputStream
+     * @param beginRowNum       开始插入的行数，第一行为1
+     * @param beginColumnNum    开始插入的列数，第一列为0
+     * @param savePath
+     * @param rules
+     * @return
+     * @throws Exception
+     */
+    public static String insertExcelAndSave(InputStream inputStream, Integer beginRowNum, Integer beginColumnNum, String savePath, List<List<CellDTO>> rules) throws Exception{
         XSSFWorkbook wb = new XSSFWorkbook(inputStream);
         XSSFSheet sheet = wb.getSheetAt(0);
 
@@ -44,7 +54,7 @@ public class ExcelUtil {
         int i = beginRowNum;
         for(List<CellDTO> cells : rules) {
             XSSFRow row = createRow(sheet, i);
-            int j = 0;
+            int j = beginColumnNum;
             for(CellDTO cell : cells) {
                 XSSFCell c = row.createCell(j++);
 
