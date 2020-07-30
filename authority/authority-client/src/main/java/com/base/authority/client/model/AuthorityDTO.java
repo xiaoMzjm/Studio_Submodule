@@ -1,8 +1,6 @@
-package com.base.authority.server.model;
+package com.base.authority.client.model;
 
 import java.util.Date;
-
-import javax.persistence.Column;
 
 /**
  * @author:小M

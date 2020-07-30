@@ -5,6 +5,7 @@ import java.util.List;
 import com.base.authority.client.model.RoleDTO;
 import com.base.authority.client.service.RoleService;
 import com.base.authority.server.manager.RoleManager;
+import com.base.authority.server.model.convertor.RoleConvertor;
 import com.base.authority.server.model.RoleDO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,7 +30,7 @@ public class RoleServiceImpl implements RoleService {
     @Override
     public List<RoleDTO> listAll() throws Exception {
         List<RoleDO> roleDOList =  roleManager.listAll();
-        return RoleDO.toDTOList(roleDOList);
+        return RoleConvertor.doToDTOList(roleDOList);
     }
 
     @Override

@@ -12,13 +12,13 @@ import javax.persistence.Table;
 
 /**
  * @author:小M
- * @date:2020/3/29 7:50 PM
+ * @date:2020/7/31 12:35 AM
  */
 @Entity
-@Table(name = "authority",
-    indexes = {@Index(name = "idx_code",  columnList="code", unique = true),
-        @Index(name = "idx_name",  columnList="name", unique = true)})
-public class AuthorityDO {
+@Table(name = "role_authority",
+    indexes = {@Index(name = "idx_role_code",  columnList="roleCode"),
+        @Index(name = "idx_power_code",  columnList="powerCode")})
+public class RoleAuthorityDO {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -31,16 +31,10 @@ public class AuthorityDO {
     private Date GmtModified;
 
     @Column(nullable = false, length = 64)
-    private String code;
+    private String roleCode;
 
     @Column(nullable = false, length = 64)
-    private String name;
-
-    @Column(nullable = false, length = 64)
-    private String type;
-
-    @Column(length = 64)
-    private String fatherCode;
+    private String powerCode;
 
     public Long getId() {
         return id;
@@ -66,35 +60,19 @@ public class AuthorityDO {
         GmtModified = gmtModified;
     }
 
-    public String getCode() {
-        return code;
+    public String getRoleCode() {
+        return roleCode;
     }
 
-    public void setCode(String code) {
-        this.code = code;
+    public void setRoleCode(String roleCode) {
+        this.roleCode = roleCode;
     }
 
-    public String getName() {
-        return name;
+    public String getPowerCode() {
+        return powerCode;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public String getFatherCode() {
-        return fatherCode;
-    }
-
-    public void setFatherCode(String fatherCode) {
-        this.fatherCode = fatherCode;
+    public void setPowerCode(String powerCode) {
+        this.powerCode = powerCode;
     }
 }

@@ -1,8 +1,10 @@
-package com.base.authority.server.model;
+package com.base.authority.server.model.convertor;
 
 import java.util.List;
 
+import com.base.authority.client.model.AuthorityDTO;
 import com.base.authority.client.model.AuthorityVO;
+import com.base.authority.server.model.AuthorityDO;
 import com.google.common.collect.Lists;
 import org.springframework.beans.BeanUtils;
 

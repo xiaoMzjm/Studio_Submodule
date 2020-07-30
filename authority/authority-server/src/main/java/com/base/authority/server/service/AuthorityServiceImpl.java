@@ -3,14 +3,12 @@ package com.base.authority.server.service;
 import java.util.List;
 import java.util.Objects;
 
-import javax.annotation.PostConstruct;
-
 import com.base.authority.client.common.Enums.AuthorityTypeEnum;
 import com.base.authority.client.model.AuthorityVO;
 import com.base.authority.client.service.AuthorityService;
 import com.base.authority.server.manager.AuthorityManager;
-import com.base.authority.server.model.AuthorityConvertor;
-import com.base.authority.server.model.AuthorityDTO;
+import com.base.authority.server.model.convertor.AuthorityConvertor;
+import com.base.authority.client.model.AuthorityDTO;
 import com.base.common.exception.BaseException;
 import com.google.common.collect.Lists;
 import org.apache.commons.lang3.StringUtils;
@@ -31,6 +29,7 @@ public class AuthorityServiceImpl implements AuthorityService {
      * 获取菜单树
      * @return
      */
+    @Override
     public List<AuthorityVO> listAll(){
         List<AuthorityDTO> authorityDTOList = authorityManager.findAll();
         List<AuthorityVO> companyVOList = AuthorityConvertor.dto2voList(authorityDTOList);
@@ -64,6 +63,7 @@ public class AuthorityServiceImpl implements AuthorityService {
      * @param fatherCode
      * @throws Exception
      */
+    @Override
     public AuthorityVO add(String name, String code , String authorityType, String fatherCode) throws Exception{
         if (StringUtils.isEmpty(name)) {
             throw new BaseException("名称为空");
@@ -82,20 +82,4 @@ public class AuthorityServiceImpl implements AuthorityService {
         return AuthorityConvertor.dto2vo(authorityDTO);
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    public void setAuthorityManager(AuthorityManager authorityManager) {
-        this.authorityManager = authorityManager;
-    }
 }

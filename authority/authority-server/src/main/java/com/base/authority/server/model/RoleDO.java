@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Index;
 import javax.persistence.Table;
 
 import com.base.authority.client.model.RoleDTO;
@@ -19,7 +20,9 @@ import org.apache.commons.collections.CollectionUtils;
  * @date:2020/7/30 12:49 AM
  */
 @Entity
-@Table(name = "role")
+@Table(name = "role",
+    indexes = {@Index(name = "idx_code",  columnList="code", unique = true),
+        @Index(name = "idx_name",  columnList="name", unique = true)})
 public class RoleDO {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -73,21 +76,4 @@ public class RoleDO {
         this.name = name;
     }
 
-    public static RoleDTO toDTO(RoleDO roleDO){
-        RoleDTO roleDTO = new RoleDTO();
-        roleDTO.setCode(roleDO.getCode());
-        roleDTO.setName(roleDO.getName());
-        return roleDTO;
-    }
-
-    public static List<RoleDTO> toDTOList(List<RoleDO> roleDOList){
-        if(CollectionUtils.isEmpty(roleDOList)) {
-            return null;
-        }
-        List<RoleDTO> result = Lists.newArrayList();
-        for(RoleDO roleDO : roleDOList) {
-            result.add(toDTO(roleDO));
-        }
-        return result;
-    }
 }
