@@ -1,5 +1,7 @@
 package com.base.authority.server.manager;
 
+import java.util.List;
+
 import com.base.authority.server.model.RoleAuthorityDO;
 
 /**
@@ -13,4 +15,8 @@ public interface RoleAuthorityManager {
     void deleteAll() throws Exception;
 
     RoleAuthorityDO selectByCode(String roleCode, String powerCode) throws Exception;
+
+    List<RoleAuthorityDO> selectAll() throws Exception;
+
+    List<RoleAuthorityDO> selectByRoleList(List<String> roleList) throws Exception;
 }

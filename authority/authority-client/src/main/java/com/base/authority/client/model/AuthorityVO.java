@@ -20,6 +20,8 @@ public class AuthorityVO {
 
     private List<AuthorityVO> children;
 
+    private List<String> roles;
+
     public String getCode() {
         return code;
     }
@@ -58,5 +60,13 @@ public class AuthorityVO {
 
     public void setChildren(List<AuthorityVO> children) {
         this.children = children;
+    }
+
+    public List<String> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<String> roles) {
+        this.roles = roles;
     }
 }

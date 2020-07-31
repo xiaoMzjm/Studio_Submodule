@@ -13,10 +13,12 @@ public interface AuthorityManager {
 
     AuthorityDTO add(String name, String code, AuthorityTypeEnum authorityTypeEnum, String fatherCode) throws Exception;
 
-    AuthorityDTO getByName(String name);
+    AuthorityDTO selectByName(String name);
 
-    AuthorityDTO getByCode(String code);
+    AuthorityDTO selectByCode(String code);
 
-    List<AuthorityDTO> findAll();
+    List<AuthorityDTO> selectAll();
+
+    List<AuthorityDTO> selectByCodeList(List<String> codeList);
 
 }

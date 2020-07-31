@@ -1,5 +1,7 @@
 package com.base.authority.server.dao;
 
+import java.util.List;
+
 import com.base.authority.server.model.RoleDO;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -10,4 +12,6 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface RoleDao extends JpaRepository<RoleDO,Long> {
+
+    List<RoleDO> findByCodeIn(List<String> codeList);
 }

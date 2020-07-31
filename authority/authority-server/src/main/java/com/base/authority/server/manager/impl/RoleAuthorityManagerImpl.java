@@ -1,6 +1,7 @@
 package com.base.authority.server.manager.impl;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 import com.base.authority.server.dao.RoleAuthorityDAO;
@@ -53,6 +54,17 @@ public class RoleAuthorityManagerImpl implements RoleAuthorityManager {
             return null;
         }
         return optional.get();
+    }
+
+    @Override
+    public List<RoleAuthorityDO> selectAll() throws Exception {
+        List<RoleAuthorityDO> result = roleAuthorityDAO.findAll();
+        return result;
+    }
+
+    @Override
+    public List<RoleAuthorityDO> selectByRoleList(List<String> roleList) throws Exception {
+        return roleAuthorityDAO.findByRoleCodeIn(roleList);
     }
 
 }

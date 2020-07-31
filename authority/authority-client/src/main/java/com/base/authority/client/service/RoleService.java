@@ -11,9 +11,13 @@ public interface RoleService {
 
     void add(String name) throws Exception;
 
-    List<RoleDTO> listAll() throws Exception;
+    List<RoleDTO> selectAll() throws Exception;
+
+    List<RoleDTO> selectByCodes(List<String> codes) throws Exception;
 
     void delete(String code) throws Exception;
 
     void updateName(String code, String name) throws Exception;
+
+
 }

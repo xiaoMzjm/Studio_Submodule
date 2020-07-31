@@ -28,9 +28,13 @@ public class RoleServiceImpl implements RoleService {
     }
 
     @Override
-    public List<RoleDTO> listAll() throws Exception {
-        List<RoleDO> roleDOList =  roleManager.listAll();
-        return RoleConvertor.doToDTOList(roleDOList);
+    public List<RoleDTO> selectAll() throws Exception {
+        return roleManager.listAll();
+    }
+
+    @Override
+    public List<RoleDTO> selectByCodes(List<String> codes) throws Exception {
+        return roleManager.selectByCodes(codes);
     }
 
     @Override

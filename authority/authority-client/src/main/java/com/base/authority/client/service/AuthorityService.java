@@ -13,5 +13,9 @@ public interface AuthorityService {
     List<AuthorityVO> listAll();
 
     AuthorityVO add(String name, String code , String authorityType, String fatherCode) throws Exception;
+
+    List<AuthorityVO> selectAllAuthorityAndRole() throws Exception;
+
+    List<AuthorityVO> listByUserCode(String userCode) throws Exception;
     
 }

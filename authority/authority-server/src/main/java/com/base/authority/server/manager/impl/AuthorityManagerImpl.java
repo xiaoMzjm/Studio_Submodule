@@ -35,13 +35,13 @@ public class AuthorityManagerImpl implements AuthorityManager {
     @Override
     public AuthorityDTO add(String name, String code, AuthorityTypeEnum authorityTypeEnum, String fatherCode) throws Exception{
 
-        AuthorityDTO exist = getByName(name);
+        AuthorityDTO exist = selectByName(name);
         if (exist != null) {
             throw new BaseException("该名称已经存在，请重新命名");
         }
 
         if (StringUtils.isNotEmpty(fatherCode)) {
-            exist = getByCode(fatherCode);
+            exist = selectByCode(fatherCode);
             if (exist == null) {
                 throw new BaseException("该父级菜单不存在");
             }
@@ -68,7 +68,7 @@ public class AuthorityManagerImpl implements AuthorityManager {
      * @return
      */
     @Override
-    public AuthorityDTO getByName(String name){
+    public AuthorityDTO selectByName(String name){
         AuthorityDO authorityDO = new AuthorityDO();
         authorityDO.setName(name);
         Example<AuthorityDO> example = Example.of(authorityDO);
@@ -85,7 +85,7 @@ public class AuthorityManagerImpl implements AuthorityManager {
      * @return
      */
     @Override
-    public AuthorityDTO getByCode(String code){
+    public AuthorityDTO selectByCode(String code){
         AuthorityDO authorityDO = new AuthorityDO();
         authorityDO.setCode(code);
         Example<AuthorityDO> example = Example.of(authorityDO);
@@ -101,8 +101,14 @@ public class AuthorityManagerImpl implements AuthorityManager {
      * @return
      */
     @Override
-    public List<AuthorityDTO> findAll(){
+    public List<AuthorityDTO> selectAll(){
         List<AuthorityDO> authorityDOList = authorityRepository.findAll();
+        return AuthorityConvertor.do2dtoList(authorityDOList);
+    }
+
+    @Override
+    public List<AuthorityDTO> selectByCodeList(List<String> codeList) {
+        List<AuthorityDO> authorityDOList = authorityRepository.findByCodeIn(codeList);
         return AuthorityConvertor.do2dtoList(authorityDOList);
     }
 }

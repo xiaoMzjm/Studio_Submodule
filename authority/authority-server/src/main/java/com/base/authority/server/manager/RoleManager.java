@@ -2,6 +2,7 @@ package com.base.authority.server.manager;
 
 import java.util.List;
 
+import com.base.authority.client.model.RoleDTO;
 import com.base.authority.server.model.RoleDO;
 
 /**
@@ -12,9 +13,11 @@ public interface RoleManager {
 
     void add(String name) throws Exception;
 
-    RoleDO findByName(String name) throws Exception;
+    RoleDTO findByName(String name) throws Exception;
 
-    List<RoleDO> listAll() throws Exception;
+    List<RoleDTO> listAll() throws Exception;
+
+    List<RoleDTO> selectByCodes(List<String> codes) throws Exception;
 
     void delete(String code) throws Exception;
 

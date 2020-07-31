@@ -4,9 +4,11 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
+import com.base.authority.client.model.RoleDTO;
 import com.base.authority.server.dao.RoleDao;
 import com.base.authority.server.manager.RoleManager;
 import com.base.authority.server.model.RoleDO;
+import com.base.authority.server.model.convertor.RoleConvertor;
 import com.base.common.util.UUIDUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +30,7 @@ public class RoleManagerImpl implements RoleManager {
         if(StringUtils.isBlank(name)) {
             throw new RuntimeException("角色名字为空");
         }
-        RoleDO findByName = findByName(name);
+        RoleDTO findByName = findByName(name);
         if(findByName != null) {
             throw new RuntimeException("该角色已存在");
         }
@@ -42,7 +44,7 @@ public class RoleManagerImpl implements RoleManager {
     }
 
     @Override
-    public RoleDO findByName(String name) throws Exception {
+    public RoleDTO findByName(String name) throws Exception {
         RoleDO roleDO = new RoleDO();
         roleDO.setName(name);
         Example example = Example.of(roleDO);
@@ -50,12 +52,18 @@ public class RoleManagerImpl implements RoleManager {
         if(!optional.isPresent()) {
             return null;
         }
-        return optional.get();
+        return RoleConvertor.doToDTO(optional.get());
     }
 
     @Override
-    public List<RoleDO> listAll() throws Exception {
-        return roleDao.findAll();
+    public List<RoleDTO> listAll() throws Exception {
+        return RoleConvertor.doToDTOList(roleDao.findAll());
+    }
+
+    @Override
+    public List<RoleDTO> selectByCodes(List<String> codes) throws Exception {
+        List<RoleDO> roleDOList = roleDao.findByCodeIn(codes);
+        return RoleConvertor.doToDTOList(roleDOList);
     }
 
     @Override
