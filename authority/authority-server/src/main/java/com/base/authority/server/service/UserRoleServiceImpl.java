@@ -6,7 +6,9 @@ import com.base.authority.client.model.UserRoleDTO;
 import com.base.authority.client.service.UserRoleService;
 import com.base.authority.server.manager.UserRoleManager;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @author:小M
@@ -18,6 +20,7 @@ public class UserRoleServiceImpl implements UserRoleService {
     @Autowired
     private UserRoleManager userRoleManager;
 
+    @Transactional(rollbackFor = Exception.class)
     @Override
     public void bind(List<String> userCodeList, List<String> roleCodeList) throws Exception {
         userRoleManager.add(userCodeList, roleCodeList);
