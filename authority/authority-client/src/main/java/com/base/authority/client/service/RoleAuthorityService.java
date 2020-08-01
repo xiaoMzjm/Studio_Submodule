@@ -1,6 +1,6 @@
 package com.base.authority.client.service;
 
-import java.util.List;
+import java.util.*;
 
 /**
  * @author:小M
@@ -8,7 +8,7 @@ import java.util.List;
  */
 public interface RoleAuthorityService {
 
-    void add(List<String> authorityList, List<String> powerList) throws Exception;
+    void add(Map<String,List<String>> roleAndAuthorityListMap) throws Exception;
 
 
 }
