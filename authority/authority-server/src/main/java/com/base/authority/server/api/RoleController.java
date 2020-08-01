@@ -12,6 +12,7 @@ import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -32,10 +33,14 @@ public class RoleController {
 
     @RequestMapping("add")
     @ResultFilter
-    public String add(@RequestParam String name) throws Exception{
-        roleService.add(name);
+    public String add(@RequestBody AddRequest addRequest) throws Exception{
+        roleService.add(addRequest.name);
         return JSON.toJSONString(Result.success(""));
     }
+    public static class AddRequest {
+        public String name;
+    }
+
 
     @RequestMapping("listall")
     @ResultFilter
@@ -46,15 +51,23 @@ public class RoleController {
 
     @RequestMapping("delete")
     @ResultFilter
-    public String delete(@RequestParam String code) throws Exception{
-        roleService.delete(code);
+    public String delete(@RequestBody DeleteRequest deleteRequest) throws Exception{
+        roleService.delete(deleteRequest.code);
         return JSON.toJSONString(Result.success(""));
+    }
+    public static class DeleteRequest{
+        public String code;
     }
 
     @RequestMapping("updatename")
     @ResultFilter
-    public String updateName(@RequestParam String code, @RequestParam String name) throws Exception{
-        roleService.updateName(code,name);
+    public String updateName(@RequestBody UpdateNameRequest updateNameRequest) throws Exception{
+        roleService.updateName(updateNameRequest.code,updateNameRequest
+        .name);
         return JSON.toJSONString(Result.success(""));
+    }
+    public static class UpdateNameRequest{
+        public String code;
+        public String name;
     }
 }
