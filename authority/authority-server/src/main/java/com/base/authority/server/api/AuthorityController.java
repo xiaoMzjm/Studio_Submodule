@@ -1,6 +1,7 @@
 package com.base.authority.server.api;
 
-import java.util.List;
+import java.util.HashMap;
+import java.util.*;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -41,12 +42,16 @@ public class AuthorityController {
 
     @RequestMapping("bindauthority")
     @ResultFilter
-    public String bindauthority(@RequestBody BindauthorityRequest bindauthorityRequest) throws Exception{
-        roleAuthorityService.add(bindauthorityRequest.roleCodeList,bindauthorityRequest.authorityCodeList);
+    public String bindauthority(@RequestBody List<BindauthorityRequest> bindAuthorityRequest) throws Exception{
+        Map<String,List<String>> roleAndAuthorityListMap = new HashMap<>();
+        for(BindauthorityRequest request : bindAuthorityRequest) {
+            roleAndAuthorityListMap.put(request.roleCode, request.authorityCodeList);
+        }
+        roleAuthorityService.add(roleAndAuthorityListMap);
         return JSON.toJSONString(Result.success(""));
     }
     static class BindauthorityRequest {
-        public List<String> roleCodeList;
+        public String roleCode;
         public List<String> authorityCodeList;
     }
 
