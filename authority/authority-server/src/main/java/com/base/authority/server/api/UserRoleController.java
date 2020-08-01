@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Api(description = "用户角色接口")
 @Controller
 @RequestMapping(value = "userrole", produces = {"application/json;charset=UTF-8"})
-@CrossOrigin(origins = "http://192.168.1.4:8080")
+@CrossOrigin(origins = "http://192.168.50.196:8080")
 @ResponseBody
 public class UserRoleController {
 
