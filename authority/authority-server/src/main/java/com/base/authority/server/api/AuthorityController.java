@@ -42,13 +42,16 @@ public class AuthorityController {
 
     @RequestMapping("bindauthority")
     @ResultFilter
-    public String bindauthority(@RequestBody List<BindauthorityRequest> bindAuthorityRequest) throws Exception{
+    public String bindauthority(@RequestBody BindauthorityReq bindauthorityReq) throws Exception{
         Map<String,List<String>> roleAndAuthorityListMap = new HashMap<>();
-        for(BindauthorityRequest request : bindAuthorityRequest) {
+        for(BindauthorityRequest request : bindauthorityReq.array) {
             roleAndAuthorityListMap.put(request.roleCode, request.authorityCodeList);
         }
         roleAuthorityService.add(roleAndAuthorityListMap);
         return JSON.toJSONString(Result.success(""));
+    }
+    static class BindauthorityReq {
+        public List<BindauthorityRequest> array;
     }
     static class BindauthorityRequest {
         public String roleCode;
