@@ -1,5 +1,7 @@
 package com.base.authority.server.dao;
 
+import java.util.List;
+
 import com.base.authority.server.model.RoleAuthorityDO;
 import com.base.authority.server.model.UserRoleDO;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -15,5 +17,5 @@ public interface UserRoleDAO extends JpaRepository<UserRoleDO,Long> {
 
     Integer deleteByUserCode(String userCode);
 
-
+    List<UserRoleDO> findByUserCodeIn(List<String> userCodeList);
 }

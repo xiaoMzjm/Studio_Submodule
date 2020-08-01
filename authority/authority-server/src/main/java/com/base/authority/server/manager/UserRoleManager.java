@@ -13,4 +13,6 @@ public interface UserRoleManager {
     void add(List<String> userCodeList, List<String> roleCodeList) throws Exception;
 
     List<UserRoleDTO> selectByUserCode(String userCode) throws Exception;
+
+    List<UserRoleDTO> selectByUserCodes(List<String> userCodeList) throws Exception;
 }

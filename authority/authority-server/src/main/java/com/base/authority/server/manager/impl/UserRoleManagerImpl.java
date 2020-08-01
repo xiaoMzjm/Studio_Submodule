@@ -48,4 +48,9 @@ public class UserRoleManagerImpl implements UserRoleManager {
         List<UserRoleDO> userRoleDOList = userRoleDAO.findAll(example);
         return UserRoleConvertor.do2dtoList(userRoleDOList);
     }
+
+    @Override
+    public List<UserRoleDTO> selectByUserCodes(List<String> userCodeList) throws Exception {
+        return UserRoleConvertor.do2dtoList(userRoleDAO.findByUserCodeIn(userCodeList));
+    }
 }
