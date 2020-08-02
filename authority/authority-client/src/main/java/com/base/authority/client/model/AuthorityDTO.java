@@ -10,9 +10,9 @@ public class AuthorityDTO {
 
     private Long id;
 
-    private Date GmtCreate;
+    private Date gmtCreate;
 
-    private Date GmtModified;
+    private Date gmtModified;
 
     private String code;
 
@@ -31,19 +31,19 @@ public class AuthorityDTO {
     }
 
     public Date getGmtCreate() {
-        return GmtCreate;
+        return gmtCreate;
     }
 
     public void setGmtCreate(Date gmtCreate) {
-        GmtCreate = gmtCreate;
+        this.gmtCreate = gmtCreate;
     }
 
     public Date getGmtModified() {
-        return GmtModified;
+        return gmtModified;
     }
 
     public void setGmtModified(Date gmtModified) {
-        GmtModified = gmtModified;
+        this.gmtModified = gmtModified;
     }
 
     public String getCode() {

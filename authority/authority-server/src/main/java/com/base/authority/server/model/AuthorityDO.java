@@ -25,10 +25,10 @@ public class AuthorityDO {
     private Long id;
 
     @Column(nullable = false)
-    private Date GmtCreate;
+    private Date gmtCreate;
 
     @Column(nullable = false)
-    private Date GmtModified;
+    private Date gmtModified;
 
     @Column(nullable = false, length = 64)
     private String code;
@@ -51,19 +51,19 @@ public class AuthorityDO {
     }
 
     public Date getGmtCreate() {
-        return GmtCreate;
+        return gmtCreate;
     }
 
     public void setGmtCreate(Date gmtCreate) {
-        GmtCreate = gmtCreate;
+        this.gmtCreate = gmtCreate;
     }
 
     public Date getGmtModified() {
-        return GmtModified;
+        return gmtModified;
     }
 
     public void setGmtModified(Date gmtModified) {
-        GmtModified = gmtModified;
+        this.gmtModified = gmtModified;
     }
 
     public String getCode() {

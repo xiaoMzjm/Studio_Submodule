@@ -11,9 +11,14 @@ import com.base.authority.server.model.convertor.AuthorityConvertor;
 import com.base.authority.server.model.AuthorityDO;
 import com.base.authority.client.model.AuthorityDTO;
 import com.base.common.exception.BaseException;
+import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Component;
 
 /**
@@ -103,12 +108,18 @@ public class AuthorityManagerImpl implements AuthorityManager {
     @Override
     public List<AuthorityDTO> selectAll(){
         List<AuthorityDO> authorityDOList = authorityRepository.findAll();
+        if(CollectionUtils.isNotEmpty(authorityDOList)) {
+            authorityDOList.sort(((o1,o2) -> new Long(o1.getGmtCreate().getTime() - o2.getGmtCreate().getTime()).intValue()));
+        }
         return AuthorityConvertor.do2dtoList(authorityDOList);
     }
 
     @Override
     public List<AuthorityDTO> selectByCodeList(List<String> codeList) {
         List<AuthorityDO> authorityDOList = authorityRepository.findByCodeIn(codeList);
+        if(CollectionUtils.isNotEmpty(authorityDOList)) {
+            authorityDOList.sort(((o1,o2) -> new Long(o1.getGmtCreate().getTime() - o2.getGmtCreate().getTime()).intValue()));
+        }
         return AuthorityConvertor.do2dtoList(authorityDOList);
     }
 }
