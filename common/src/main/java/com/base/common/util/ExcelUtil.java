@@ -94,6 +94,7 @@ public class ExcelUtil {
                 XSSFCell c = row.createCell(j++);
 
                 CellStyle style = wb.createCellStyle();
+                style.setWrapText(true);
                 style.setBorderBottom(BorderStyle.THIN);
                 style.setBottomBorderColor(IndexedColors.BLACK.getIndex());
                 style.setBorderTop(BorderStyle.THIN);
