@@ -13,6 +13,7 @@ import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.ss.usermodel.BorderStyle;
 import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Font;
 import org.apache.poi.ss.usermodel.HorizontalAlignment;
 import org.apache.poi.ss.usermodel.IndexedColors;
@@ -63,7 +64,10 @@ public class ExcelUtil {
                     int num = row.getLastCellNum();
                     for(int i=0; i < num; i++) {
                         XSSFCell cell = row.getCell(i);
-                        if(cell==null || cell.getStringCellValue()==null){
+                        if(cell!=null) {
+                            cell.setCellType(CellType.STRING);
+                        }
+                        if(cell == null || cell.getStringCellValue() == null){
                             continue;
                         }
                         String value= cell.getStringCellValue();
