@@ -4,9 +4,13 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.Iterator;
 import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
+import org.apache.commons.lang3.StringUtils;
+import org.apache.poi.hssf.usermodel.HSSFCell;
+import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.ss.usermodel.BorderStyle;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.Font;
@@ -47,10 +51,35 @@ public class ExcelUtil {
      * @return
      * @throws Exception
      */
-    public static String insertExcelAndSave(InputStream inputStream, Integer beginRowNum, Integer beginColumnNum, String savePath, List<List<CellDTO>> rules) throws Exception{
+    public static String insertExcelAndSave(InputStream inputStream, Integer beginRowNum, Integer beginColumnNum, String savePath, List<List<CellDTO>> rules, Map<String,String> replacemap) throws Exception{
         XSSFWorkbook wb = new XSSFWorkbook(inputStream);
         XSSFSheet sheet = wb.getSheetAt(0);
 
+        if(replacemap != null) {
+            Iterator rows = sheet.rowIterator();
+            while(rows.hasNext()) {
+                HSSFRow row = (HSSFRow) rows.next();
+                if(row != null) {
+                    int num = row.getLastCellNum();
+                    for(int i=0; i < num; i++) {
+                        HSSFCell cell=  row.getCell(i);if(cell==null || cell.getStringCellValue()==null){
+                            continue;
+                        }
+                        String value= cell.getStringCellValue();
+                        if(StringUtils.isEmpty(value)) {
+                            continue;
+                        }
+                        for(Map.Entry<String,String> entry : replacemap.entrySet()) {
+                            String key = entry.getKey();
+                            if(value.contains(key)) {
+                                value = value.replace(key,entry.getValue());
+                                cell.setCellValue(value);
+                            }
+                        }
+                    }
+                }
+            }
+        }
 
         int i = beginRowNum;
         for(List<CellDTO> cells : rules) {
