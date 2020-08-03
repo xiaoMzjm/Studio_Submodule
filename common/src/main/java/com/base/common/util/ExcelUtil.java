@@ -77,7 +77,7 @@ public class ExcelUtil {
                         for(Map.Entry<String,String> entry : replacemap.entrySet()) {
                             String key = entry.getKey();
                             if(value.contains(key)) {
-                                value = value.replace(key,entry.getValue());
+                                value = value.replaceAll(key,entry.getValue());
                                 cell.setCellValue(value);
                             }
                         }
