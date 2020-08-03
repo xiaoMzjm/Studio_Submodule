@@ -58,11 +58,12 @@ public class ExcelUtil {
         if(replacemap != null) {
             Iterator rows = sheet.rowIterator();
             while(rows.hasNext()) {
-                HSSFRow row = (HSSFRow) rows.next();
+                XSSFRow row = (XSSFRow) rows.next();
                 if(row != null) {
                     int num = row.getLastCellNum();
                     for(int i=0; i < num; i++) {
-                        HSSFCell cell=  row.getCell(i);if(cell==null || cell.getStringCellValue()==null){
+                        XSSFCell cell = row.getCell(i);
+                        if(cell==null || cell.getStringCellValue()==null){
                             continue;
                         }
                         String value= cell.getStringCellValue();
