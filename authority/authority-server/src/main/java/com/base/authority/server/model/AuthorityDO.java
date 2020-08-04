@@ -17,7 +17,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "authority",
     indexes = {@Index(name = "idx_code",  columnList="code", unique = true),
-        @Index(name = "idx_name",  columnList="name", unique = true)})
+        @Index(name = "idx_name",  columnList="name")})
 public class AuthorityDO {
 
     @Id
