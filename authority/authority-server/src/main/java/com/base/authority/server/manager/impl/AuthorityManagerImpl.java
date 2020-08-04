@@ -40,13 +40,9 @@ public class AuthorityManagerImpl implements AuthorityManager {
     @Override
     public AuthorityDTO add(String name, String code, AuthorityTypeEnum authorityTypeEnum, String fatherCode) throws Exception{
 
-        AuthorityDTO exist = selectByName(name);
-        if (exist != null) {
-            throw new BaseException("该名称已经存在，请重新命名");
-        }
 
         if (StringUtils.isNotEmpty(fatherCode)) {
-            exist = selectByCode(fatherCode);
+            AuthorityDTO exist = selectByCode(fatherCode);
             if (exist == null) {
                 throw new BaseException("该父级菜单不存在");
             }
