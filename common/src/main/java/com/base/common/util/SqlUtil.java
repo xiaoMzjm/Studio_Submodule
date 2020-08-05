@@ -10,7 +10,7 @@ import org.apache.commons.collections.CollectionUtils;
  */
 public class SqlUtil {
 
-    private String inStrList(List<String> list){
+    public static String inStrList(List<String> list){
         if(CollectionUtils.isEmpty(list)) {
             return null;
         }
@@ -25,7 +25,7 @@ public class SqlUtil {
         return "(" + str + ")";
     }
 
-    private String inIntList(List<Integer> list){
+    public static String inIntList(List<Integer> list){
         if(CollectionUtils.isEmpty(list)) {
             return null;
         }
