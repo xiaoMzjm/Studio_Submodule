@@ -87,23 +87,26 @@ public class ExcelUtil {
         }
 
         int i = beginRowNum;
+        CellStyle style = wb.createCellStyle();
+        style.setWrapText(true);
+        style.setBorderBottom(BorderStyle.THIN);
+        style.setBottomBorderColor(IndexedColors.BLACK.getIndex());
+        style.setBorderTop(BorderStyle.THIN);
+        style.setTopBorderColor(IndexedColors.BLACK.getIndex());
+        style.setBorderLeft(BorderStyle.THIN);
+        style.setLeftBorderColor(IndexedColors.BLACK.getIndex());
+        style.setBorderRight(BorderStyle.THIN);
+        style.setRightBorderColor(IndexedColors.BLACK.getIndex());
+        style.setAlignment(HorizontalAlignment.CENTER);
+
+
         for(List<CellDTO> cells : rules) {
             XSSFRow row = createRow(sheet, i);
             int j = beginColumnNum;
             for(CellDTO cell : cells) {
                 XSSFCell c = row.createCell(j++);
 
-                CellStyle style = wb.createCellStyle();
-                style.setWrapText(true);
-                style.setBorderBottom(BorderStyle.THIN);
-                style.setBottomBorderColor(IndexedColors.BLACK.getIndex());
-                style.setBorderTop(BorderStyle.THIN);
-                style.setTopBorderColor(IndexedColors.BLACK.getIndex());
-                style.setBorderLeft(BorderStyle.THIN);
-                style.setLeftBorderColor(IndexedColors.BLACK.getIndex());
-                style.setBorderRight(BorderStyle.THIN);
-                style.setRightBorderColor(IndexedColors.BLACK.getIndex());
-                style.setAlignment(HorizontalAlignment.CENTER);
+
 
                 c.setCellValue(cell.text);
                 if(cell.color != null){
