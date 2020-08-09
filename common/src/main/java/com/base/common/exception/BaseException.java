@@ -5,7 +5,7 @@ package com.base.common.exception;
  * @author:小M
  * @date:2019/1/12 12:25 PM
  */
-public class BaseException extends Exception{
+public class BaseException extends RuntimeException{
 
     private String errorCode;
 
