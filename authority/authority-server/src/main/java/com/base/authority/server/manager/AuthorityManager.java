@@ -11,7 +11,7 @@ import com.base.authority.client.model.AuthorityDTO;
  */
 public interface AuthorityManager {
 
-    AuthorityDTO add(String name, String code, AuthorityTypeEnum authorityTypeEnum, String fatherCode) throws Exception;
+    AuthorityDTO add(String name, String code, AuthorityTypeEnum authorityTypeEnum, String fatherCode) throws RuntimeException;
 
     AuthorityDTO selectByName(String name);
 

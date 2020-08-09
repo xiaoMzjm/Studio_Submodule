@@ -10,9 +10,9 @@ import com.base.authority.client.model.UserRoleDTO;
  */
 public interface UserRoleManager {
 
-    void add(List<String> userCodeList, List<String> roleCodeList) throws Exception;
+    void add(List<String> userCodeList, List<String> roleCodeList) throws RuntimeException;
 
-    List<UserRoleDTO> selectByUserCode(String userCode) throws Exception;
+    List<UserRoleDTO> selectByUserCode(String userCode) throws RuntimeException;
 
-    List<UserRoleDTO> selectByUserCodes(List<String> userCodeList) throws Exception;
+    List<UserRoleDTO> selectByUserCodes(List<String> userCodeList) throws RuntimeException;
 }

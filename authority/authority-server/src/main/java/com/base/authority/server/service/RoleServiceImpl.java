@@ -22,24 +22,24 @@ public class RoleServiceImpl implements RoleService {
     private RoleManager roleManager;
 
     @Override
-    public void add(String name) throws Exception {
+    public void add(String name) throws RuntimeException {
 
         roleManager.add(name);
     }
 
     @Override
-    public List<RoleDTO> selectAll() throws Exception {
+    public List<RoleDTO> selectAll() throws RuntimeException {
         return roleManager.listAll();
     }
 
     @Override
-    public List<RoleDTO> selectByCodes(List<String> codes) throws Exception {
+    public List<RoleDTO> selectByCodes(List<String> codes) throws RuntimeException {
         return roleManager.selectByCodes(codes);
     }
 
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public void delete(String code) throws Exception {
+    public void delete(String code) throws RuntimeException {
         // 删除角色
         roleManager.delete(code);
         // 删除角色和权限的绑定关系 TODO
@@ -48,7 +48,7 @@ public class RoleServiceImpl implements RoleService {
     }
 
     @Override
-    public void updateName(String code, String name) throws Exception {
+    public void updateName(String code, String name) throws RuntimeException {
         roleManager.updateName(code, name);
     }
 }

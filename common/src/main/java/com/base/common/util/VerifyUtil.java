@@ -14,7 +14,7 @@ import org.apache.commons.lang3.StringUtils;
  */
 public class VerifyUtil {
 
-    public static void isTrue(Boolean b , String code, String errMsg , Object... args) throws Exception {
+    public static void isTrue(Boolean b , String code, String errMsg , Object... args) throws RuntimeException {
         if(b == null || b == false) {
             StringBuilder errorMsg = new StringBuilder();
             errorMsg.append(errMsg);
@@ -36,7 +36,7 @@ public class VerifyUtil {
      * @param args
      * @throws Exception
      */
-    public static void isNotNull(Object o , String errCode, String errMsg , Object... args) throws Exception{
+    public static void isNotNull(Object o , String errCode, String errMsg , Object... args) throws RuntimeException{
         if(o == null) {
             isTrue(Boolean.FALSE , errCode, errMsg , args);
         }
@@ -49,7 +49,7 @@ public class VerifyUtil {
      * @param args
      * @throws Exception
      */
-    public static void isNotEmpty(Object o , String errCode, String errMsg, Object... args) throws Exception{
+    public static void isNotEmpty(Object o , String errCode, String errMsg, Object... args) throws RuntimeException{
         if(o == null) {
             isTrue(Boolean.FALSE , errCode, errMsg , args);
         }

@@ -8,7 +8,7 @@ import java.util.*;
  */
 public interface RoleAuthorityService {
 
-    void add(Map<String,List<String>> roleAndAuthorityListMap) throws Exception;
+    void add(Map<String,List<String>> roleAndAuthorityListMap) throws RuntimeException;
 
 
 }

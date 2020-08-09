@@ -26,7 +26,7 @@ public class RoleManagerImpl implements RoleManager {
     private RoleDao roleDao;
 
     @Override
-    public void add(String name) throws Exception {
+    public void add(String name) throws RuntimeException {
         if(StringUtils.isBlank(name)) {
             throw new RuntimeException("角色名字为空");
         }
@@ -44,7 +44,7 @@ public class RoleManagerImpl implements RoleManager {
     }
 
     @Override
-    public RoleDTO findByName(String name) throws Exception {
+    public RoleDTO findByName(String name) throws RuntimeException {
         RoleDO roleDO = new RoleDO();
         roleDO.setName(name);
         Example example = Example.of(roleDO);
@@ -56,18 +56,18 @@ public class RoleManagerImpl implements RoleManager {
     }
 
     @Override
-    public List<RoleDTO> listAll() throws Exception {
+    public List<RoleDTO> listAll() throws RuntimeException {
         return RoleConvertor.doToDTOList(roleDao.findAll());
     }
 
     @Override
-    public List<RoleDTO> selectByCodes(List<String> codes) throws Exception {
+    public List<RoleDTO> selectByCodes(List<String> codes) throws RuntimeException {
         List<RoleDO> roleDOList = roleDao.findByCodeIn(codes);
         return RoleConvertor.doToDTOList(roleDOList);
     }
 
     @Override
-    public void delete(String code) throws Exception {
+    public void delete(String code) throws RuntimeException {
         RoleDO findByCode = findByCode(code);
         if(findByCode == null) {
             throw new RuntimeException("该角色不存在");
@@ -76,7 +76,7 @@ public class RoleManagerImpl implements RoleManager {
     }
 
     @Override
-    public RoleDO findByCode(String code) throws Exception {
+    public RoleDO findByCode(String code) throws RuntimeException {
         RoleDO roleDO = new RoleDO();
         roleDO.setCode(code);
         Example example = Example.of(roleDO);
@@ -88,7 +88,7 @@ public class RoleManagerImpl implements RoleManager {
     }
 
     @Override
-    public void updateName(String code, String name) throws Exception {
+    public void updateName(String code, String name) throws RuntimeException {
         RoleDO findByCode = findByCode(code);
         if(findByCode == null) {
             throw new RuntimeException("该角色不存在");

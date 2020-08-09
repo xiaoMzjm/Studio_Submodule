@@ -38,7 +38,7 @@ public class AuthorityManagerImpl implements AuthorityManager {
      * @param fatherCode
      */
     @Override
-    public AuthorityDTO add(String name, String code, AuthorityTypeEnum authorityTypeEnum, String fatherCode) throws Exception{
+    public AuthorityDTO add(String name, String code, AuthorityTypeEnum authorityTypeEnum, String fatherCode) throws RuntimeException{
 
 
         if (StringUtils.isNotEmpty(fatherCode)) {

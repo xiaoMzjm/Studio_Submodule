@@ -29,7 +29,7 @@ public class UserServiceImpl implements UserService {
      * @param code
      * @return
      */
-    public UserVO add(String code) throws Exception{
+    public UserVO add(String code) throws RuntimeException{
 
         VerifyUtil.isNotNull(code, ErrorCode.REGISTER_CODE_NULL.getCode(), ErrorCode.REGISTER_CODE_NULL.getDesc());
         UserDTO userDTO = userManager.findByCode(code);
@@ -48,7 +48,7 @@ public class UserServiceImpl implements UserService {
      * @return
      * @throws Exception
      */
-    public UserVO updateToken(String code) throws Exception {
+    public UserVO updateToken(String code) throws RuntimeException {
         VerifyUtil.isNotNull(code, ErrorCode.REGISTER_CODE_NULL.getCode(), ErrorCode.REGISTER_CODE_NULL.getDesc());
         String token = UUIDUtil.get();
         UserDTO userDTO = userManager.updateToken(code, token);
@@ -56,7 +56,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void deleteByCode(String code) throws Exception {
+    public void deleteByCode(String code) throws RuntimeException {
         userManager.deleteByCode(code);
     }
 
@@ -66,7 +66,7 @@ public class UserServiceImpl implements UserService {
      * @return
      * @throws Exception
      */
-    public UserVO findByCode(String code) throws Exception {
+    public UserVO findByCode(String code) throws RuntimeException {
         VerifyUtil.isNotNull(code, ErrorCode.REGISTER_CODE_NULL.getCode(), ErrorCode.REGISTER_CODE_NULL.getDesc());
         UserDTO userDTO = userManager.findByCode(code);
         return UserConvertor.dto2VO(userDTO);

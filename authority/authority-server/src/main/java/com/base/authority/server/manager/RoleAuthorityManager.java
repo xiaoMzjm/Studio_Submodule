@@ -10,13 +10,13 @@ import com.base.authority.server.model.RoleAuthorityDO;
  */
 public interface RoleAuthorityManager {
 
-    void add(String roleCode, String powerCode) throws Exception;
+    void add(String roleCode, String powerCode) throws RuntimeException;
 
-    void deleteAll() throws Exception;
+    void deleteAll() throws RuntimeException;
 
-    RoleAuthorityDO selectByCode(String roleCode, String powerCode) throws Exception;
+    RoleAuthorityDO selectByCode(String roleCode, String powerCode) throws RuntimeException;
 
-    List<RoleAuthorityDO> selectAll() throws Exception;
+    List<RoleAuthorityDO> selectAll() throws RuntimeException;
 
-    List<RoleAuthorityDO> selectByRoleList(List<String> roleList) throws Exception;
+    List<RoleAuthorityDO> selectByRoleList(List<String> roleList) throws RuntimeException;
 }

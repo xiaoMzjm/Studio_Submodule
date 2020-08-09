@@ -26,17 +26,17 @@ public class UserRoleServiceImpl implements UserRoleService {
 
     @Transactional(rollbackFor = Exception.class)
     @Override
-    public void bind(List<String> userCodeList, List<String> roleCodeList) throws Exception {
+    public void bind(List<String> userCodeList, List<String> roleCodeList) throws RuntimeException {
         userRoleManager.add(userCodeList, roleCodeList);
     }
 
     @Override
-    public List<UserRoleDTO> selectByUserCode(String userCode) throws Exception {
+    public List<UserRoleDTO> selectByUserCode(String userCode) throws RuntimeException {
         return userRoleManager.selectByUserCode(userCode);
     }
 
     @Override
-    public Map<String, List<UserRoleDTO>> selectByUserCodes(List<String> userCodes) throws Exception {
+    public Map<String, List<UserRoleDTO>> selectByUserCodes(List<String> userCodes) throws RuntimeException {
         List<UserRoleDTO> userRoleDTOList = userRoleManager.selectByUserCodes(userCodes);
         Map<String, List<UserRoleDTO>> result = new HashMap<>();
         if(CollectionUtils.isEmpty(userRoleDTOList)) {

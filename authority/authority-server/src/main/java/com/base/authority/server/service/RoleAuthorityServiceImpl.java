@@ -26,7 +26,7 @@ public class RoleAuthorityServiceImpl implements RoleAuthorityService {
 
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public void add(Map<String,List<String>> roleAndAuthorityListMap) throws Exception {
+    public void add(Map<String,List<String>> roleAndAuthorityListMap) throws RuntimeException {
         roleAuthorityManager.deleteAll();
         ;
         for(Map.Entry<String,List<String>> entry : roleAndAuthorityListMap.entrySet()) {

@@ -22,7 +22,7 @@ public class RoleAuthorityManagerImpl implements RoleAuthorityManager {
     private RoleAuthorityDAO roleAuthorityDAO;
 
     @Override
-    public void add(String roleCode, String powerCode) throws Exception {
+    public void add(String roleCode, String powerCode) throws RuntimeException {
 
         RoleAuthorityDO selectResult = selectByCode(roleCode,powerCode);
         if(selectResult != null) {
@@ -39,12 +39,12 @@ public class RoleAuthorityManagerImpl implements RoleAuthorityManager {
     }
 
     @Override
-    public void deleteAll() throws Exception {
+    public void deleteAll() throws RuntimeException {
         roleAuthorityDAO.deleteAll();
     }
 
     @Override
-    public RoleAuthorityDO selectByCode(String roleCode, String powerCode) throws Exception {
+    public RoleAuthorityDO selectByCode(String roleCode, String powerCode) throws RuntimeException {
         RoleAuthorityDO roleAuthorityDO = new RoleAuthorityDO();
         roleAuthorityDO.setRoleCode(roleCode);
         roleAuthorityDO.setPowerCode(powerCode);
@@ -57,13 +57,13 @@ public class RoleAuthorityManagerImpl implements RoleAuthorityManager {
     }
 
     @Override
-    public List<RoleAuthorityDO> selectAll() throws Exception {
+    public List<RoleAuthorityDO> selectAll() throws RuntimeException {
         List<RoleAuthorityDO> result = roleAuthorityDAO.findAll();
         return result;
     }
 
     @Override
-    public List<RoleAuthorityDO> selectByRoleList(List<String> roleList) throws Exception {
+    public List<RoleAuthorityDO> selectByRoleList(List<String> roleList) throws RuntimeException {
         return roleAuthorityDAO.findByRoleCodeIn(roleList);
     }
 

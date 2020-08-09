@@ -8,13 +8,13 @@ import com.base.user.client.model.UserVO;
  */
 public interface UserService {
 
-    UserVO findByCode(String code) throws Exception;
+    UserVO findByCode(String code) throws RuntimeException;
 
-    UserVO add(String code) throws Exception;
+    UserVO add(String code) throws RuntimeException;
 
-    UserVO updateToken(String code) throws Exception;
+    UserVO updateToken(String code) throws RuntimeException;
 
-    void deleteByCode(String code) throws Exception;
+    void deleteByCode(String code) throws RuntimeException;
 
 
 

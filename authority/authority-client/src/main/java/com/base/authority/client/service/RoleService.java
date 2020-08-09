@@ -9,15 +9,15 @@ import com.base.authority.client.model.RoleDTO;
  */
 public interface RoleService {
 
-    void add(String name) throws Exception;
+    void add(String name) throws RuntimeException;
 
-    List<RoleDTO> selectAll() throws Exception;
+    List<RoleDTO> selectAll() throws RuntimeException;
 
-    List<RoleDTO> selectByCodes(List<String> codes) throws Exception;
+    List<RoleDTO> selectByCodes(List<String> codes) throws RuntimeException;
 
-    void delete(String code) throws Exception;
+    void delete(String code) throws RuntimeException;
 
-    void updateName(String code, String name) throws Exception;
+    void updateName(String code, String name) throws RuntimeException;
 
 
 }

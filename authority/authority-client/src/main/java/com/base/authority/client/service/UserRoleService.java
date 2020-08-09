@@ -10,9 +10,9 @@ import com.base.authority.client.model.UserRoleDTO;
  */
 public interface UserRoleService {
 
-    void bind(List<String> userCodeList, List<String> roleCodeList) throws Exception;
+    void bind(List<String> userCodeList, List<String> roleCodeList) throws RuntimeException;
 
-    List<UserRoleDTO> selectByUserCode(String userCode) throws Exception;
+    List<UserRoleDTO> selectByUserCode(String userCode) throws RuntimeException;
 
-    Map<String,List<UserRoleDTO>> selectByUserCodes(List<String> userCodes) throws Exception;
+    Map<String,List<UserRoleDTO>> selectByUserCodes(List<String> userCodes) throws RuntimeException;
 }

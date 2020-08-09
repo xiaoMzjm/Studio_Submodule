@@ -12,10 +12,10 @@ public interface AuthorityService {
 
     List<AuthorityVO> listAll();
 
-    AuthorityVO add(String name, String code , String authorityType, String fatherCode) throws Exception;
+    AuthorityVO add(String name, String code , String authorityType, String fatherCode) throws RuntimeException;
 
-    List<AuthorityVO> selectAllAuthorityAndRole() throws Exception;
+    List<AuthorityVO> selectAllAuthorityAndRole() throws RuntimeException;
 
-    List<AuthorityVO> listByUserCode(String userCode) throws Exception;
+    List<AuthorityVO> listByUserCode(String userCode) throws RuntimeException;
     
 }

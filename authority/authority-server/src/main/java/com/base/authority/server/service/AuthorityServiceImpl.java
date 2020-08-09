@@ -50,7 +50,7 @@ public class AuthorityServiceImpl implements AuthorityService {
     }
 
     @Override
-    public List<AuthorityVO> listByUserCode(String userCode) throws Exception{
+    public List<AuthorityVO> listByUserCode(String userCode) throws RuntimeException{
         List<AuthorityVO> result = Lists.newArrayList();
         List<UserRoleDTO> userRoleDTOList = userRoleManager.selectByUserCode(userCode);
         if(CollectionUtils.isEmpty(userRoleDTOList)) {
@@ -102,7 +102,7 @@ public class AuthorityServiceImpl implements AuthorityService {
      * @throws Exception
      */
     @Override
-    public AuthorityVO add(String name, String code , String authorityType, String fatherCode) throws Exception{
+    public AuthorityVO add(String name, String code , String authorityType, String fatherCode) throws RuntimeException{
         if (StringUtils.isEmpty(name)) {
             throw new BaseException("名称为空");
         }
@@ -121,7 +121,7 @@ public class AuthorityServiceImpl implements AuthorityService {
     }
 
     @Override
-    public List<AuthorityVO> selectAllAuthorityAndRole() throws Exception {
+    public List<AuthorityVO> selectAllAuthorityAndRole() throws RuntimeException {
         List<RoleAuthorityDO> roleAuthorityDOList = roleAuthorityManager.selectAll();
         if(CollectionUtils.isEmpty(roleAuthorityDOList)) {
             return Lists.newArrayList();
