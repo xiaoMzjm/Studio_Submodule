@@ -33,6 +33,7 @@ public class ExcelUtil {
         public Integer color;
         public boolean isDate;
         public String dateFormat;
+        public HorizontalAlignment horizontalAlignment;
         public CellDTO(String text, Integer color) {
             this.text = text;
             this.color = color;
@@ -106,8 +107,6 @@ public class ExcelUtil {
             for(CellDTO cell : cells) {
                 XSSFCell c = row.createCell(j++);
 
-
-
                 c.setCellValue(cell.text);
                 if(cell.color != null){
                     Font font  = wb.createFont();
@@ -117,6 +116,9 @@ public class ExcelUtil {
                 if(cell.isDate) {
                     short df = wb.createDataFormat().getFormat(cell.dateFormat);
                     style.setDataFormat(df);
+                }
+                if(cell.horizontalAlignment != null) {
+                    style.setAlignment(cell.horizontalAlignment);
                 }
                 c.setCellStyle(style);
 
