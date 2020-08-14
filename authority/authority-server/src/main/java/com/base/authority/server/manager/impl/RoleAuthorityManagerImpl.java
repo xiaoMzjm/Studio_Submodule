@@ -69,7 +69,7 @@ public class RoleAuthorityManagerImpl implements RoleAuthorityManager {
 
     @Override
     public List<RoleAuthorityDO> listByAuthCodes(List<String> authCodeList) throws RuntimeException {
-        return roleAuthorityDAO.findByRoleCodeIn(authCodeList);
+        return roleAuthorityDAO.findByPowerCodeIn(authCodeList);
     }
 
 }
