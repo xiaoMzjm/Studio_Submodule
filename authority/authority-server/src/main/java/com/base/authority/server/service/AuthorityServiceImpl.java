@@ -52,7 +52,7 @@ public class AuthorityServiceImpl implements AuthorityService {
     @Override
     public List<AuthorityVO> listByUserCode(String userCode) throws RuntimeException{
         List<AuthorityVO> result = Lists.newArrayList();
-        List<UserRoleDTO> userRoleDTOList = userRoleManager.selectByUserCode(userCode);
+        List<UserRoleDTO> userRoleDTOList = userRoleManager.listByUserCode(userCode);
         if(CollectionUtils.isEmpty(userRoleDTOList)) {
             return result;
         }
@@ -60,7 +60,7 @@ public class AuthorityServiceImpl implements AuthorityService {
         if(CollectionUtils.isEmpty(roleCodeList)) {
             return result;
         }
-        List<RoleAuthorityDO> roleAuthorityDOList = roleAuthorityManager.selectByRoleList(roleCodeList);
+        List<RoleAuthorityDO> roleAuthorityDOList = roleAuthorityManager.listByRoleCodes(roleCodeList);
         if(CollectionUtils.isEmpty(roleAuthorityDOList)) {
             return result;
         }
@@ -74,6 +74,19 @@ public class AuthorityServiceImpl implements AuthorityService {
         return authorityVOList;
     }
 
+    @Override
+    public Boolean hasAuthority(String userCode, String authorityCode) {
+        List<RoleAuthorityDO> roleAuthorityDOList = roleAuthorityManager.listByAuthCodes(Lists.newArrayList(authorityCode));
+        if(CollectionUtils.isEmpty(roleAuthorityDOList)) {
+            return false;
+        }
+        List<String> roleList = roleAuthorityDOList.stream().map(RoleAuthorityDO::getRoleCode).collect(Collectors.toList());
+        List<UserRoleDTO> userRoleDTOList = userRoleManager.listByUserCodeAndRoleCodes(userCode, roleList);
+        if(CollectionUtils.isNotEmpty(userRoleDTOList)) {
+            return true;
+        }
+        return false;
+    }
 
     /**
      * 构建菜单树
@@ -122,7 +135,7 @@ public class AuthorityServiceImpl implements AuthorityService {
 
     @Override
     public List<AuthorityVO> selectAllAuthorityAndRole() throws RuntimeException {
-        List<RoleAuthorityDO> roleAuthorityDOList = roleAuthorityManager.selectAll();
+        List<RoleAuthorityDO> roleAuthorityDOList = roleAuthorityManager.listAll();
         if(CollectionUtils.isEmpty(roleAuthorityDOList)) {
             return Lists.newArrayList();
         }

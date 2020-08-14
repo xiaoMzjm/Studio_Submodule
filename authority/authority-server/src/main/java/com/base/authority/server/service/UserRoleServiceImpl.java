@@ -10,7 +10,6 @@ import com.base.authority.server.manager.UserRoleManager;
 import com.google.common.collect.Lists;
 import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -32,12 +31,12 @@ public class UserRoleServiceImpl implements UserRoleService {
 
     @Override
     public List<UserRoleDTO> selectByUserCode(String userCode) throws RuntimeException {
-        return userRoleManager.selectByUserCode(userCode);
+        return userRoleManager.listByUserCode(userCode);
     }
 
     @Override
     public Map<String, List<UserRoleDTO>> selectByUserCodes(List<String> userCodes) throws RuntimeException {
-        List<UserRoleDTO> userRoleDTOList = userRoleManager.selectByUserCodes(userCodes);
+        List<UserRoleDTO> userRoleDTOList = userRoleManager.listByUserCodes(userCodes);
         Map<String, List<UserRoleDTO>> result = new HashMap<>();
         if(CollectionUtils.isEmpty(userRoleDTOList)) {
             return result;

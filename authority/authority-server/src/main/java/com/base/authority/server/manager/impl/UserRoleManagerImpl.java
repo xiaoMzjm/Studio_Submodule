@@ -41,7 +41,7 @@ public class UserRoleManagerImpl implements UserRoleManager {
     }
 
     @Override
-    public List<UserRoleDTO> selectByUserCode(String userCode) throws RuntimeException {
+    public List<UserRoleDTO> listByUserCode(String userCode) throws RuntimeException {
         UserRoleDO userRoleDO = new UserRoleDO();
         userRoleDO.setUserCode(userCode);
         Example<UserRoleDO> example = Example.of(userRoleDO);
@@ -50,7 +50,14 @@ public class UserRoleManagerImpl implements UserRoleManager {
     }
 
     @Override
-    public List<UserRoleDTO> selectByUserCodes(List<String> userCodeList) throws RuntimeException {
+    public List<UserRoleDTO> listByUserCodes(List<String> userCodeList) throws RuntimeException {
         return UserRoleConvertor.do2dtoList(userRoleDAO.findByUserCodeIn(userCodeList));
     }
+
+    @Override
+    public List<UserRoleDTO> listByUserCodeAndRoleCodes(String userCode, List<String> roleCodes)
+        throws RuntimeException {
+        return UserRoleConvertor.do2dtoList(userRoleDAO.findByUserCodeAndRoleCodes(userCode, roleCodes));
+    }
+
 }

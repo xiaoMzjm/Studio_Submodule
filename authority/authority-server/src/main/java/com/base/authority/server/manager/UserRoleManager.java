@@ -12,7 +12,10 @@ public interface UserRoleManager {
 
     void add(List<String> userCodeList, List<String> roleCodeList) throws RuntimeException;
 
-    List<UserRoleDTO> selectByUserCode(String userCode) throws RuntimeException;
+    List<UserRoleDTO> listByUserCode(String userCode) throws RuntimeException;
 
-    List<UserRoleDTO> selectByUserCodes(List<String> userCodeList) throws RuntimeException;
+    List<UserRoleDTO> listByUserCodes(List<String> userCodeList) throws RuntimeException;
+
+    List<UserRoleDTO> listByUserCodeAndRoleCodes(String userCode, List<String> roleCodes) throws RuntimeException;
+
 }

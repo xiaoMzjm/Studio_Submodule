@@ -5,6 +5,7 @@ import java.util.List;
 import com.base.authority.server.model.RoleAuthorityDO;
 import com.base.authority.server.model.UserRoleDO;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -14,8 +15,10 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserRoleDAO extends JpaRepository<UserRoleDO,Long> {
 
-
     Integer deleteByUserCode(String userCode);
 
     List<UserRoleDO> findByUserCodeIn(List<String> userCodeList);
+
+    @Query(nativeQuery = true, value="select * from user_role where user_code = :userCode and role_code in(:roleCodes)")
+    List<UserRoleDO> findByUserCodeAndRoleCodes(String userCode, List<String> roleCodes);
 }

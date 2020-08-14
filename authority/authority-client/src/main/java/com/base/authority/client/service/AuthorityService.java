@@ -17,5 +17,7 @@ public interface AuthorityService {
     List<AuthorityVO> selectAllAuthorityAndRole() throws RuntimeException;
 
     List<AuthorityVO> listByUserCode(String userCode) throws RuntimeException;
+
+    Boolean hasAuthority(String userCode,  String authorityCode);
     
 }

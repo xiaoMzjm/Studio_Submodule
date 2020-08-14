@@ -14,9 +14,11 @@ public interface RoleAuthorityManager {
 
     void deleteAll() throws RuntimeException;
 
-    RoleAuthorityDO selectByCode(String roleCode, String powerCode) throws RuntimeException;
+    RoleAuthorityDO getByRoleCodeAndAuthCode(String roleCode, String powerCode) throws RuntimeException;
 
-    List<RoleAuthorityDO> selectAll() throws RuntimeException;
+    List<RoleAuthorityDO> listAll() throws RuntimeException;
 
-    List<RoleAuthorityDO> selectByRoleList(List<String> roleList) throws RuntimeException;
+    List<RoleAuthorityDO> listByRoleCodes(List<String> roleList) throws RuntimeException;
+
+    List<RoleAuthorityDO> listByAuthCodes(List<String> authCodeList) throws RuntimeException;
 }

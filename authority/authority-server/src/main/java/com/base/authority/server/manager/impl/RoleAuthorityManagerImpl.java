@@ -24,7 +24,7 @@ public class RoleAuthorityManagerImpl implements RoleAuthorityManager {
     @Override
     public void add(String roleCode, String powerCode) throws RuntimeException {
 
-        RoleAuthorityDO selectResult = selectByCode(roleCode,powerCode);
+        RoleAuthorityDO selectResult = getByRoleCodeAndAuthCode(roleCode,powerCode);
         if(selectResult != null) {
             return;
         }
@@ -44,7 +44,7 @@ public class RoleAuthorityManagerImpl implements RoleAuthorityManager {
     }
 
     @Override
-    public RoleAuthorityDO selectByCode(String roleCode, String powerCode) throws RuntimeException {
+    public RoleAuthorityDO getByRoleCodeAndAuthCode(String roleCode, String powerCode) throws RuntimeException {
         RoleAuthorityDO roleAuthorityDO = new RoleAuthorityDO();
         roleAuthorityDO.setRoleCode(roleCode);
         roleAuthorityDO.setPowerCode(powerCode);
@@ -57,14 +57,19 @@ public class RoleAuthorityManagerImpl implements RoleAuthorityManager {
     }
 
     @Override
-    public List<RoleAuthorityDO> selectAll() throws RuntimeException {
+    public List<RoleAuthorityDO> listAll() throws RuntimeException {
         List<RoleAuthorityDO> result = roleAuthorityDAO.findAll();
         return result;
     }
 
     @Override
-    public List<RoleAuthorityDO> selectByRoleList(List<String> roleList) throws RuntimeException {
+    public List<RoleAuthorityDO> listByRoleCodes(List<String> roleList) throws RuntimeException {
         return roleAuthorityDAO.findByRoleCodeIn(roleList);
+    }
+
+    @Override
+    public List<RoleAuthorityDO> listByAuthCodes(List<String> authCodeList) throws RuntimeException {
+        return roleAuthorityDAO.findByRoleCodeIn(authCodeList);
     }
 
 }

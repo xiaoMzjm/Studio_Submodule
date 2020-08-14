@@ -15,4 +15,6 @@ import org.springframework.stereotype.Repository;
 public interface RoleAuthorityDAO extends JpaRepository<RoleAuthorityDO,Long> {
 
     List<RoleAuthorityDO> findByRoleCodeIn(List<String> roleCodeList);
+
+    List<RoleAuthorityDO> findByPowerCodeIn(List<String> authCode);
 }
