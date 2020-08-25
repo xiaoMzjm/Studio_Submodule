@@ -107,7 +107,13 @@ public class ExcelUtil {
             for(CellDTO cell : cells) {
                 XSSFCell c = row.createCell(j++);
 
-                c.setCellValue(cell.text);
+                try {
+                    Double doubleValue = Double.valueOf(cell.text);
+                    c.setCellValue(doubleValue);
+                }catch (Exception e) {
+                    c.setCellValue(cell.text);
+                }
+
                 if(cell.color != null){
                     Font font  = wb.createFont();
                     font.setColor(cell.color.shortValue());
