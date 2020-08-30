@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.text.DecimalFormat;
 import java.util.Iterator;
 import java.util.List;
 import java.util.*;
@@ -110,13 +111,6 @@ public class ExcelUtil {
             for(CellDTO cell : cells) {
                 XSSFCell c = row.createCell(j++);
 
-                try {
-                    Double doubleValue = Double.valueOf(cell.text);
-                    c.setCellValue(doubleValue);
-                }catch (Exception e) {
-                    c.setCellValue(cell.text);
-                }
-
                 if(cell.color != null){
                     Font font  = wb.createFont();
                     font.setColor(cell.color.shortValue());
@@ -132,9 +126,15 @@ public class ExcelUtil {
                 if(cell.isString) {
                     short df = wb.createDataFormat().getFormat("@");
                     style.setDataFormat(df);
-                    c.setCellType(CellType.STRING);
                 }
                 c.setCellStyle(style);
+
+                try {
+                    Double doubleValue = Double.valueOf(cell.text);
+                    c.setCellValue(doubleValue);
+                }catch (Exception e) {
+                    c.setCellValue(cell.text);
+                }
 
             }
             i++;
