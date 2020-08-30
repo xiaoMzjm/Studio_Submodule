@@ -147,6 +147,8 @@ public class ExcelUtil {
                     c.setCellValue(cell.text);
                 }
 
+                styleNew = null;
+
             }
             i++;
         }
