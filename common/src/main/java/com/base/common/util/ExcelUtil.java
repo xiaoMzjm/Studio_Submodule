@@ -92,21 +92,7 @@ public class ExcelUtil {
         }
 
         int i = beginRowNum;
-        CellStyle style = wb.createCellStyle();
-        style.setWrapText(true);
-        style.setBorderBottom(BorderStyle.THIN);
-        style.setBottomBorderColor(IndexedColors.BLACK.getIndex());
-        style.setBorderTop(BorderStyle.THIN);
-        style.setTopBorderColor(IndexedColors.BLACK.getIndex());
-        style.setBorderLeft(BorderStyle.THIN);
-        style.setLeftBorderColor(IndexedColors.BLACK.getIndex());
-        style.setBorderRight(BorderStyle.THIN);
-        style.setRightBorderColor(IndexedColors.BLACK.getIndex());
-        style.setAlignment(HorizontalAlignment.CENTER);
-
-        Font defaultFont = ((XSSFCellStyle)style).getFont();
-        short deafultDataFormat = style.getDataFormat();
-        HorizontalAlignment defaultHorizontalAlignmen = style.getAlignment();
+        CellStyle style = getCellStyle(wb);
 
 
         for(List<CellDTO> cells : rules) {
@@ -114,28 +100,41 @@ public class ExcelUtil {
             int j = beginColumnNum;
             for(CellDTO cell : cells) {
                 XSSFCell c = row.createCell(j++);
-
-                style.setFont(defaultFont);
-                ((XSSFCellStyle)style).setDataFormat(deafultDataFormat);
-                style.setAlignment(defaultHorizontalAlignmen);
+                CellStyle styleNew = null;
 
                 if(cell.color != null){
                     Font font  = wb.createFont();
                     font.setColor(cell.color.shortValue());
-                    style.setFont(font);
+                    if(styleNew == null) {
+                        styleNew = getCellStyle(wb);
+                    }
+                    styleNew.setFont(font);
                 }
                 if(cell.isDate) {
                     short df = wb.createDataFormat().getFormat(cell.dateFormat);
-                    style.setDataFormat(df);
+                    if(styleNew == null) {
+                        styleNew = getCellStyle(wb);
+                    }
+                    styleNew.setDataFormat(df);
                 }
                 if(cell.horizontalAlignment != null) {
-                    style.setAlignment(cell.horizontalAlignment);
+                    if(styleNew == null) {
+                        styleNew = getCellStyle(wb);
+                    }
+                    styleNew.setAlignment(cell.horizontalAlignment);
                 }
                 if(cell.isString) {
                     short df = wb.createDataFormat().getFormat("@");
-                    style.setDataFormat(df);
+                    if(styleNew == null) {
+                        styleNew = getCellStyle(wb);
+                    }
+                    styleNew.setDataFormat(df);
                 }
-                c.setCellStyle(style);
+                if(styleNew != null) {
+                    c.setCellStyle(styleNew);
+                }else {
+                    c.setCellStyle(style);
+                }
 
                 try {
                     if(cell.isString) {
@@ -177,5 +176,20 @@ public class ExcelUtil {
         }
         row = sheet.createRow(rowIndex);
         return row;
+    }
+
+    private static CellStyle getCellStyle(XSSFWorkbook wb){
+        CellStyle style = wb.createCellStyle();
+        style.setWrapText(true);
+        style.setBorderBottom(BorderStyle.THIN);
+        style.setBottomBorderColor(IndexedColors.BLACK.getIndex());
+        style.setBorderTop(BorderStyle.THIN);
+        style.setTopBorderColor(IndexedColors.BLACK.getIndex());
+        style.setBorderLeft(BorderStyle.THIN);
+        style.setLeftBorderColor(IndexedColors.BLACK.getIndex());
+        style.setBorderRight(BorderStyle.THIN);
+        style.setRightBorderColor(IndexedColors.BLACK.getIndex());
+        style.setAlignment(HorizontalAlignment.CENTER);
+        return style;
     }
 }
