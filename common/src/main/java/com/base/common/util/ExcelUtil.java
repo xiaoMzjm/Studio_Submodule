@@ -18,6 +18,7 @@ import org.apache.poi.ss.usermodel.Font;
 import org.apache.poi.ss.usermodel.HorizontalAlignment;
 import org.apache.poi.ss.usermodel.IndexedColors;
 import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFCellStyle;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -32,8 +33,10 @@ public class ExcelUtil {
         public String text;
         public Integer color;
         public boolean isDate;
+        public boolean isString;
         public String dateFormat;
         public HorizontalAlignment horizontalAlignment;
+
         public CellDTO(String text, Integer color) {
             this.text = text;
             this.color = color;
@@ -125,6 +128,10 @@ public class ExcelUtil {
                 }
                 if(cell.horizontalAlignment != null) {
                     style.setAlignment(cell.horizontalAlignment);
+                }
+                if(cell.isString) {
+                    short df = wb.createDataFormat().getFormat("@");
+                    style.setDataFormat(df);
                 }
                 c.setCellStyle(style);
 
