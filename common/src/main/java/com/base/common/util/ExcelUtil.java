@@ -130,8 +130,12 @@ public class ExcelUtil {
                 c.setCellStyle(style);
 
                 try {
-                    Double doubleValue = Double.valueOf(cell.text);
-                    c.setCellValue(doubleValue);
+                    if(cell.isString) {
+                        c.setCellValue(cell.text);
+                    }else {
+                        Double doubleValue = Double.valueOf(cell.text);
+                        c.setCellValue(doubleValue);
+                    }
                 }catch (Exception e) {
                     c.setCellValue(cell.text);
                 }
