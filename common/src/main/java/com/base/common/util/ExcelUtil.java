@@ -132,6 +132,7 @@ public class ExcelUtil {
                 if(cell.isString) {
                     short df = wb.createDataFormat().getFormat("@");
                     style.setDataFormat(df);
+                    c.setCellType(CellType.STRING);
                 }
                 c.setCellStyle(style);
 
