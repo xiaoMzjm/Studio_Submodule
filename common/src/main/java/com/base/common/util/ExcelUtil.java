@@ -104,12 +104,20 @@ public class ExcelUtil {
         style.setRightBorderColor(IndexedColors.BLACK.getIndex());
         style.setAlignment(HorizontalAlignment.CENTER);
 
+        Font defaultFont = ((XSSFCellStyle)style).getFont();
+        short deafultDataFormat = style.getDataFormat();
+        HorizontalAlignment defaultHorizontalAlignmen = style.getAlignment();
+
 
         for(List<CellDTO> cells : rules) {
             XSSFRow row = createRow(sheet, i);
             int j = beginColumnNum;
             for(CellDTO cell : cells) {
                 XSSFCell c = row.createCell(j++);
+
+                style.setFont(defaultFont);
+                ((XSSFCellStyle)style).setDataFormat(deafultDataFormat);
+                style.setAlignment(defaultHorizontalAlignmen);
 
                 if(cell.color != null){
                     Font font  = wb.createFont();
