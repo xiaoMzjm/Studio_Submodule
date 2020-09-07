@@ -1,12 +1,10 @@
-package com.base.authority.server.service;
+package com.base.authority.server.client;
 
 import java.util.List;
 
 import com.base.authority.client.model.RoleDTO;
-import com.base.authority.client.service.RoleService;
+import com.base.authority.client.client.RoleClient;
 import com.base.authority.server.manager.RoleManager;
-import com.base.authority.server.model.convertor.RoleConvertor;
-import com.base.authority.server.model.RoleDO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
  * @date:2020/7/30 1:03 AM
  */
 @Service
-public class RoleServiceImpl implements RoleService {
+public class RoleClientImpl implements RoleClient {
 
     @Autowired
     private RoleManager roleManager;

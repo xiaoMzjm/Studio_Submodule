@@ -1,4 +1,4 @@
-package com.base.authority.client.service;
+package com.base.authority.client.client;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ import com.base.authority.client.model.AuthorityVO;
  * @author:小M
  * @date:2020/3/29 7:48 PM
  */
-public interface AuthorityService {
+public interface AuthorityClient {
 
     List<AuthorityVO> listAll();
 

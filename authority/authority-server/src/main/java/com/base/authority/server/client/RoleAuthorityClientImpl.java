@@ -1,15 +1,9 @@
-package com.base.authority.server.service;
+package com.base.authority.server.client;
 
 import java.util.*;
 
-import com.base.authority.client.model.AuthorityDTO;
-import com.base.authority.client.service.RoleAuthorityService;
-import com.base.authority.server.manager.AuthorityManager;
+import com.base.authority.client.client.RoleAuthorityClient;
 import com.base.authority.server.manager.RoleAuthorityManager;
-import com.base.authority.server.model.RoleAuthorityDO;
-import com.google.common.collect.Lists;
-import com.sun.javafx.collections.MappingChange;
-import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
  * @date:2020/7/31 1:06 AM
  */
 @Component
-public class RoleAuthorityServiceImpl implements RoleAuthorityService {
+public class RoleAuthorityClientImpl implements RoleAuthorityClient {
 
     @Autowired
     private RoleAuthorityManager roleAuthorityManager;

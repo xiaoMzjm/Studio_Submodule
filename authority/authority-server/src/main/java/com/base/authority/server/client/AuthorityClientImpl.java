@@ -1,4 +1,4 @@
-package com.base.authority.server.service;
+package com.base.authority.server.client;
 
 import java.util.HashMap;
 import java.util.List;
@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 import com.base.authority.client.common.Enums.AuthorityTypeEnum;
 import com.base.authority.client.model.AuthorityVO;
 import com.base.authority.client.model.UserRoleDTO;
-import com.base.authority.client.service.AuthorityService;
+import com.base.authority.client.client.AuthorityClient;
 import com.base.authority.server.manager.AuthorityManager;
 import com.base.authority.server.manager.RoleAuthorityManager;
 import com.base.authority.server.manager.UserRoleManager;
@@ -28,7 +28,7 @@ import org.springframework.stereotype.Service;
  * @date:2020/3/29 8:48 PM
  */
 @Service
-public class AuthorityServiceImpl implements AuthorityService {
+public class AuthorityClientImpl implements AuthorityClient {
 
     @Autowired
     private AuthorityManager authorityManager;

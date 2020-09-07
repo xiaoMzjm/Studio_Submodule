@@ -1,4 +1,4 @@
-package com.base.authority.client.service;
+package com.base.authority.client.client;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import com.base.authority.client.model.RoleDTO;
  * @author:小M
  * @date:2020/7/30 1:01 AM
  */
-public interface RoleService {
+public interface RoleClient {
 
     void add(String name) throws RuntimeException;
 

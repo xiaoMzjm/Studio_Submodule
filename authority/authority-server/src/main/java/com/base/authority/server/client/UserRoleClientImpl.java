@@ -1,11 +1,11 @@
-package com.base.authority.server.service;
+package com.base.authority.server.client;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import com.base.authority.client.model.UserRoleDTO;
-import com.base.authority.client.service.UserRoleService;
+import com.base.authority.client.client.UserRoleClient;
 import com.base.authority.server.manager.UserRoleManager;
 import com.google.common.collect.Lists;
 import org.apache.commons.collections.CollectionUtils;
@@ -18,7 +18,7 @@ import org.springframework.transaction.annotation.Transactional;
  * @date:2020/8/1 1:46 AM
  */
 @Component
-public class UserRoleServiceImpl implements UserRoleService {
+public class UserRoleClientImpl implements UserRoleClient {
 
     @Autowired
     private UserRoleManager userRoleManager;

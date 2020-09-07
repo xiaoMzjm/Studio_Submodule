@@ -3,25 +3,19 @@ package com.base.authority.server.api;
 import java.util.HashMap;
 import java.util.*;
 
-import javax.servlet.http.HttpServletRequest;
-
 import com.alibaba.fastjson.JSON;
 
 import com.base.authority.client.model.AuthorityVO;
-import com.base.authority.client.service.AuthorityService;
-import com.base.authority.client.service.RoleAuthorityService;
-import com.base.authority.server.manager.RoleAuthorityManager;
+import com.base.authority.client.client.AuthorityClient;
+import com.base.authority.client.client.RoleAuthorityClient;
 import com.base.common.annotation.ResultFilter;
 import com.base.common.constant.Result;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
@@ -36,9 +30,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class AuthorityController {
 
     @Autowired
-    private RoleAuthorityService roleAuthorityService;
+    private RoleAuthorityClient roleAuthorityService;
     @Autowired
-    private AuthorityService authorityService;
+    private AuthorityClient authorityService;
 
     @RequestMapping("bindauthority")
     @ResultFilter

@@ -4,8 +4,7 @@ import java.util.List;
 
 import com.alibaba.fastjson.JSON;
 
-import com.base.authority.client.service.RoleService;
-import com.base.authority.client.service.UserRoleService;
+import com.base.authority.client.client.UserRoleClient;
 import com.base.common.annotation.ResultFilter;
 import com.base.common.constant.Result;
 import io.swagger.annotations.Api;
@@ -14,7 +13,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
@@ -29,7 +27,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class UserRoleController {
 
     @Autowired
-    private UserRoleService userRoleService;
+    private UserRoleClient userRoleService;
 
     @RequestMapping("bind")
     @ResultFilter
