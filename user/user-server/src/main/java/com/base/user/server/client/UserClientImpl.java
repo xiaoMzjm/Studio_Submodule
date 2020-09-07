@@ -1,12 +1,10 @@
-package com.base.user.server.service;
-
-import javax.annotation.PostConstruct;
+package com.base.user.server.client;
 
 import com.base.common.exception.BaseException;
 import com.base.common.util.UUIDUtil;
 import com.base.common.util.VerifyUtil;
 import com.base.user.client.model.UserVO;
-import com.base.user.client.service.UserService;
+import com.base.user.client.client.UserClient;
 import com.base.user.server.common.Constant.ErrorCode;
 import com.base.user.server.manager.UserManager;
 import com.base.user.server.model.UserConvertor;
@@ -19,7 +17,7 @@ import org.springframework.stereotype.Service;
  * @date:2020/2/9 9:44 PM
  */
 @Service
-public class UserServiceImpl implements UserService {
+public class UserClientImpl implements UserClient {
 
     @Autowired
     private UserManager userManager;
