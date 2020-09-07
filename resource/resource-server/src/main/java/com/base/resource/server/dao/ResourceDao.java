@@ -15,6 +15,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ResourceDao extends JpaRepository<ResourceDO,Long> {
 
-    @Query(nativeQuery = true, value="select * from resource where name in(:nameList)")
-    List<ResourceDO> findByNames(@Param("nameList") List<String> nameList);
+    List<ResourceDO> findByNameIn(@Param("nameList") List<String> nameList);
 }

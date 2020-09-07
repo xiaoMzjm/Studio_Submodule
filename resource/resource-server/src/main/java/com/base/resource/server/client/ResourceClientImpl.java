@@ -1,11 +1,11 @@
-package com.base.resource.server.service;
+package com.base.resource.server.client;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import com.base.resource.client.model.ResourceVO;
-import com.base.resource.client.service.ResourceService;
+import com.base.resource.client.client.ResourceClient;
 import com.base.resource.server.manager.ResourceManager;
 import com.base.resource.server.model.ResourceConvertor;
 import com.base.resource.client.model.ResourceDTO;
@@ -18,7 +18,7 @@ import org.springframework.stereotype.Service;
  * @date:2020/4/5 9:26 PM
  */
 @Service
-public class ResourceServiceImpl implements ResourceService {
+public class ResourceClientImpl implements ResourceClient {
 
     @Autowired
     private ResourceManager resourceManager;

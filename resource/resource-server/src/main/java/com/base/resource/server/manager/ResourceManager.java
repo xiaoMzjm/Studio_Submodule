@@ -14,30 +14,11 @@ import org.springframework.stereotype.Component;
  * @author:小M
  * @date:2020/4/5 8:46 PM
  */
-@Component
-public class ResourceManager {
-
-    @Autowired
-    private ResourceDao resourceDao;
-
-    public ResourceDTO add(String path, String name, String ext, String oriName) {
-
-        ResourceDO resourceDO = new ResourceDO();
-        Date now = new Date();
-        resourceDO.setGmtCreate(now);
-        resourceDO.setGmtModified(now);
-        resourceDO.setPath(path);
-        resourceDO.setName(name);
-        resourceDO.setExt(ext);
-        resourceDO.setOriName(oriName);
-        resourceDO = resourceDao.save(resourceDO);
-        return ResourceConvertor.do2dto(resourceDO);
-    }
+public interface ResourceManager {
 
 
-    public List<ResourceDTO> findByNames(List<String> nameList){
-        List<ResourceDO> result = resourceDao.findByNames(nameList);
-        return ResourceConvertor.do2dtos(result);
-    }
+    ResourceDTO add(String path, String name, String ext, String oriName);
+
+    List<ResourceDTO> findByNames(List<String> nameList);
 
 }
