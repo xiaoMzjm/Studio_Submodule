@@ -257,7 +257,7 @@ public class DateUtil {
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.YEAR, year);
         calendar.set(Calendar.MONTH, 0);
-        calendar.set(Calendar.DAY_OF_MONTH, 0);
+        calendar.set(Calendar.DAY_OF_MONTH, 1);
         calendar.set(Calendar.HOUR_OF_DAY, 0);
         calendar.set(Calendar.MINUTE, 0);
         calendar.set(Calendar.SECOND, 0);
@@ -562,5 +562,11 @@ public class DateUtil {
                 days = 28;
         }
         return days;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(DateUtil.getFirstDayOfYear(2020));
+        System.out.println(DateUtil.getFirstDayOfMonth(2020 , 1));
+        System.out.println(DateUtil.getFirstDayOfMonth(2020 , 2));
     }
 }
