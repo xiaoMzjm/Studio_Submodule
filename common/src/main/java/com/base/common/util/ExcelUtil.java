@@ -57,11 +57,12 @@ public class ExcelUtil {
      * @return
      * @throws Exception
      */
-    public static String insertExcelAndSave(InputStream inputStream, Integer beginRowNum, Integer beginColumnNum, String savePath, List<List<CellDTO>> rules, Map<String,String> replacemap) throws Exception{
+    public static String insertExcelAndSave(InputStream inputStream, Integer beginRowNum, Integer beginColumnNum, String savePath, List<List<CellDTO>> rules, Map<String,CellDTO> replaceMap) throws Exception{
         XSSFWorkbook wb = new XSSFWorkbook(inputStream);
         XSSFSheet sheet = wb.getSheetAt(0);
+        CellStyle style = getCellStyle(wb);
 
-        if(replacemap != null) {
+        if(replaceMap != null) {
             Iterator rows = sheet.rowIterator();
             while(rows.hasNext()) {
                 XSSFRow row = (XSSFRow) rows.next();
@@ -79,10 +80,12 @@ public class ExcelUtil {
                         if(StringUtils.isEmpty(value)) {
                             continue;
                         }
-                        for(Map.Entry<String,String> entry : replacemap.entrySet()) {
+                        for(Map.Entry<String,CellDTO> entry : replaceMap.entrySet()) {
                             String key = entry.getKey();
                             if(value.contains(key)) {
-                                value = value.replaceAll(key,entry.getValue());
+                                CellDTO cellDTO = entry.getValue();
+                                value = value.replaceAll(key,cellDTO.text);
+                                setStyle(wb, cellDTO, cell, style);
                                 cell.setCellValue(value);
                             }
                         }
@@ -92,8 +95,6 @@ public class ExcelUtil {
         }
 
         int i = beginRowNum;
-        CellStyle style = getCellStyle(wb);
-
 
         for(List<CellDTO> cells : rules) {
             XSSFRow row = createRow(sheet, i);
@@ -102,39 +103,41 @@ public class ExcelUtil {
                 XSSFCell c = row.createCell(j++);
                 CellStyle styleNew = null;
 
-                if(cell.color != null){
-                    Font font  = wb.createFont();
-                    font.setColor(cell.color.shortValue());
-                    if(styleNew == null) {
-                        styleNew = getCellStyle(wb);
-                    }
-                    styleNew.setFont(font);
-                }
-                if(cell.isDate) {
-                    short df = wb.createDataFormat().getFormat(cell.dateFormat);
-                    if(styleNew == null) {
-                        styleNew = getCellStyle(wb);
-                    }
-                    styleNew.setDataFormat(df);
-                }
-                if(cell.horizontalAlignment != null) {
-                    if(styleNew == null) {
-                        styleNew = getCellStyle(wb);
-                    }
-                    styleNew.setAlignment(cell.horizontalAlignment);
-                }
-                if(cell.isString) {
-                    short df = wb.createDataFormat().getFormat("@");
-                    if(styleNew == null) {
-                        styleNew = getCellStyle(wb);
-                    }
-                    styleNew.setDataFormat(df);
-                }
-                if(styleNew != null) {
-                    c.setCellStyle(styleNew);
-                }else {
-                    c.setCellStyle(style);
-                }
+                setStyle(wb, cell, c, style);
+
+                //if(cell.color != null){
+                //    Font font  = wb.createFont();
+                //    font.setColor(cell.color.shortValue());
+                //    if(styleNew == null) {
+                //        styleNew = getCellStyle(wb);
+                //    }
+                //    styleNew.setFont(font);
+                //}
+                //if(cell.isDate) {
+                //    short df = wb.createDataFormat().getFormat(cell.dateFormat);
+                //    if(styleNew == null) {
+                //        styleNew = getCellStyle(wb);
+                //    }
+                //    styleNew.setDataFormat(df);
+                //}
+                //if(cell.horizontalAlignment != null) {
+                //    if(styleNew == null) {
+                //        styleNew = getCellStyle(wb);
+                //    }
+                //    styleNew.setAlignment(cell.horizontalAlignment);
+                //}
+                //if(cell.isString) {
+                //    short df = wb.createDataFormat().getFormat("@");
+                //    if(styleNew == null) {
+                //        styleNew = getCellStyle(wb);
+                //    }
+                //    styleNew.setDataFormat(df);
+                //}
+                //if(styleNew != null) {
+                //    c.setCellStyle(styleNew);
+                //}else {
+                //    c.setCellStyle(style);
+                //}
 
                 try {
                     if(cell.isString) {
@@ -162,6 +165,43 @@ public class ExcelUtil {
         os.flush();
         os.close();
         return newFileName;
+    }
+
+    private static void setStyle(XSSFWorkbook wb, CellDTO cell, XSSFCell c, CellStyle style){
+        CellStyle styleNew = null;
+        if(cell.color != null){
+            Font font  = wb.createFont();
+            font.setColor(cell.color.shortValue());
+            if(styleNew == null) {
+                styleNew = getCellStyle(wb);
+            }
+            styleNew.setFont(font);
+        }
+        if(cell.isDate) {
+            short df = wb.createDataFormat().getFormat(cell.dateFormat);
+            if(styleNew == null) {
+                styleNew = getCellStyle(wb);
+            }
+            styleNew.setDataFormat(df);
+        }
+        if(cell.horizontalAlignment != null) {
+            if(styleNew == null) {
+                styleNew = getCellStyle(wb);
+            }
+            styleNew.setAlignment(cell.horizontalAlignment);
+        }
+        if(cell.isString) {
+            short df = wb.createDataFormat().getFormat("@");
+            if(styleNew == null) {
+                styleNew = getCellStyle(wb);
+            }
+            styleNew.setDataFormat(df);
+        }
+        if(styleNew != null) {
+            c.setCellStyle(styleNew);
+        }else {
+            c.setCellStyle(style);
+        }
     }
 
     /**
