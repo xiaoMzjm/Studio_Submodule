@@ -123,7 +123,7 @@ public class TokenInterceptor extends HandlerInterceptorAdapter implements Handl
         response.setContentType("text/html;charset=utf-8");
         response.setContentType("application/json;charset=utf-8");
         response.setCharacterEncoding("utf-8");
-        response.setHeader("Access-Control-Allow-Origin", "http://" + crossoriginIp + ":8080");
+        response.setHeader("Access-Control-Allow-Origin", "http://" + crossoriginIp );
         response.setHeader("Cache-Control","no-cache");
         response.addHeader("Access-Control-Allow-Credentials", "true");
         response.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT, OPTIONS, DELETE");
